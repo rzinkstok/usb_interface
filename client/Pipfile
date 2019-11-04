@@ -6,8 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-pylibftdi = "*"
 pyside2 = "*"
+pylibftdi = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"

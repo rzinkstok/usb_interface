@@ -102,7 +102,7 @@ class USBInterface(QObject):
         try:
             print("Opening device...")
             # Attempt to construct an FTDI Device
-            self._dev = Device('MON001')
+            self._dev = Device()
             print("Device opened")
 
             # Reset the mode, then switch into serial FIFO
@@ -119,7 +119,7 @@ class USBInterface(QObject):
             self.connected.emit(True)
 
         except FtdiError:
-            pass
+            print("Could not connect to device")
 
     def _disconnect(self):
         self.connected.emit(False)

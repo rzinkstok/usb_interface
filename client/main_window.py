@@ -34,12 +34,13 @@ class MainWindow(QMainWindow):
         if connected:
             message = 'Connected!'
         else:
-            message = 'Device not found.'
+            message = 'Disconnected'
 
         self._status.setText(message)
 
     def test(self):
         print("Clicked!")
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

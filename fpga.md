@@ -37,7 +37,7 @@ Instantiates:
 
 ###Module `usb_interface.v`
 Instantiates:
-- `cmd_receveiver`
+- `cmd_receiver`
 - `cmd_fifo`
 - `read_fifo`
 - `msg_sender`

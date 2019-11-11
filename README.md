@@ -1,14 +1,14 @@
-#FTDI interface for the Numato Styx FPGA devboard
+# FTDI interface for the Numato Styx FPGA devboard
 
 USB interface based on the FTDI FT2232H chip present on the Styx board. This interface
 allows the exchange of data between an application running on the host computer and
 the FPGA.
 
 This is a slightly modified version of part of Mike Stewart's AGC monitor project, see
-http://github.com/thewonderidiot/agc_monitor.git. 
+https://github.com/thewonderidiot/agc_monitor.git. 
 
 
-##Installation
+## Installation
 These are instructions for Ubuntu 18.04. 
 
 - Install libftdi: `sudo apt-get install libftdi1-dev`
@@ -22,12 +22,12 @@ These are instructions for Ubuntu 18.04.
 - Create a virtualenv and install `pylibftdi` using pip
 - Before opening the device, add the Styx PID to the USB_PID_LIST and the Styx VID to the USB_VID_LIST
 
-##Data format
-###Command
+## Data format
+### Command
 From application to FPGA.
 - Byte 1: first bit: read or write. Next 7 bits: address group
 - Byte 2 and 3: address
 - Byte 4 and 5: data (for write commands)
 
-###Message
+### Message
 From FPGA to application (response).

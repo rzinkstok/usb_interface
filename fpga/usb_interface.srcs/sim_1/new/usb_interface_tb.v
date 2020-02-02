@@ -2,7 +2,6 @@
 
 module usb_interface_tb();
     
-    reg clk;
     reg rst_n;
     
     reg clkout;
@@ -21,12 +20,11 @@ module usb_interface_tb();
     wire [7:0] cmd_in;
     
     always #16.667 clkout = ~clkout;
-    always #10 clk = ~clk;
+    //always #10 clk = ~clk;
     
     assign data = (~rd_n) ? data_in : 8'bZ;
     
     usb_interface usb(
-        .clk(clk),
         .rst_n(rst_n),
         
         .clkout(clkout),
@@ -45,7 +43,7 @@ module usb_interface_tb();
     
     initial begin
         $display($time, "<< Starting simulation >>");
-        clk = 1'b0;
+        //clk = 1'b0;
         rst_n = 1'b0;
         clkout = 1'b0;
         rxf_n = 1'b1;

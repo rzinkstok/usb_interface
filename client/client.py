@@ -34,6 +34,8 @@ def write_byte(dev, i, y=False):
     m = slip(bytes([i]))
     print(m)
     print(f"{i:08b}")
+    if(len(m)>3):
+        print("-------------------------------------------------------------------------------")
     dev.write(m)
     if y:
         time.sleep(0.4)
@@ -50,17 +52,16 @@ with Device() as dev:
     dev.ftdi_fn.ftdi_setflowctrl(0)
     dev.ftdi_fn.ftdi_usb_purge_buffers()
 
+    #while True:
+    #    i = random.randint(0, 256)
+    #    write_byte(dev, i)
     while True:
-        i = random.randint(0, 256)
-        write_byte(dev, i
-                   )
-
-    write_byte(dev, 255)
-    write_byte(dev, 192)
-    write_byte(dev, 255)
-    write_byte(dev, 219)
-    write_byte(dev, 255)
-    write_byte(dev, 192)
-    write_byte(dev, 255)
-    write_byte(dev, 219)
-    write_byte(dev, 255)
+        write_byte(dev, 255)
+        write_byte(dev, 192)
+        write_byte(dev, 255)
+        write_byte(dev, 219)
+        write_byte(dev, 255)
+        write_byte(dev, 192)
+        write_byte(dev, 255)
+        write_byte(dev, 219)
+        write_byte(dev, 255)

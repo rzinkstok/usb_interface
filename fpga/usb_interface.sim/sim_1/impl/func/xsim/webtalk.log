@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Feb  2 14:09:54 2020
+# Process ID: 17673
+# Current directory: /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/impl/func/xsim
+# Command line: wbtcv -mode batch -source /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/impl/func/xsim/xsim.dir/usb_interface_tb_func_impl/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/impl/func/xsim/webtalk.log
+# Journal file: /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/impl/func/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/impl/func/xsim/xsim.dir/usb_interface_tb_func_impl/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/impl/func/xsim/xsim.dir/usb_interface_tb_func_impl/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Feb  2 14:09:57 2020. For additional details about this file, please refer to the WebTalk help file at /tools/Xilinx/Vivado/2019.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sun Feb  2 14:09:57 2020...

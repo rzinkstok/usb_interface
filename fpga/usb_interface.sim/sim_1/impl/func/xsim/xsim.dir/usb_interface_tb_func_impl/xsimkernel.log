@@ -1,0 +1,7 @@
+Running: xsim.dir/usb_interface_tb_func_impl/xsimk -simmode gui -wdb usb_interface_tb_func_impl.wdb -simrunnum 0 -socket 46671
+Design successfully loaded
+Design Loading Memory Usage: 44304 KB (Peak: 44304 KB)
+Design Loading CPU Usage: 40 ms
+Simulation completed
+Simulation Memory Usage: 126560 KB (Peak: 183572 KB)
+Simulation CPU Usage: 70 ms

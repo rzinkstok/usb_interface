@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Sat Feb  1 23:15:06 2020
+| Date         : Sun Feb  2 14:42:48 2020
 | Host         : fpgadev running 64-bit Ubuntu 18.04.3 LTS
 | Command      : report_timing_summary -max_paths 10 -file usb_interface_timing_summary_routed.rpt -pb usb_interface_timing_summary_routed.pb -rpx usb_interface_timing_summary_routed.rpx -warn_on_violation
 | Design       : usb_interface
@@ -53,7 +53,7 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 12 register/latch pins with no clock driven by root clock pin: clkout (HIGH)
+ There are 15 register/latch pins with no clock driven by root clock pin: clkout (HIGH)
 
 
 2. checking constant_clock
@@ -68,7 +68,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 32 pins that are not constrained for maximum delay. (HIGH)
+ There are 38 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -82,7 +82,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There are 11 ports with no output delay specified. (HIGH)
+ There are 13 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 

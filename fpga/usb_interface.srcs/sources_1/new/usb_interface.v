@@ -2,7 +2,6 @@
 `default_nettype none
 
 module usb_interface(
-    input wire clk,
     input wire rst_n,
     
     // FT2232H signals
@@ -19,7 +18,8 @@ module usb_interface(
     output wire dbg_clkout,
     output wire rxf,
     output wire txe,
-    output wire [7:0]cmd_in
+    output wire [7:0]cmd_in,
+    output wire [1:0]rx_state
 );
     assign dbg_clkout = clkout;
     assign rxf = ~rxf_n;
@@ -61,7 +61,8 @@ module usb_interface(
         .data(data),
         .data_ready(rx_data_ready),
         .cmd_msg(cmd_in),
-        .cmd_valid(cmd_valid)
+        .cmd_valid(cmd_valid),
+        .state(rx_state)
     );
 
     

@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"usb_interface_tb_func_impl.v" \
+"../../../../../usb_interface.srcs/sim_1/new/usb_interface_tb.v" \
+
+# Do not sort compile order
+nosort

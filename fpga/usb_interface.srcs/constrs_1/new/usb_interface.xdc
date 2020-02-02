@@ -1,6 +1,3 @@
-set_property IOSTANDARD LVCMOS33 [get_ports clk]
-set_property PACKAGE_PIN Y6 [get_ports clk]
-
 set_property IOSTANDARD LVCMOS33 [get_ports rst_n]
 set_property PACKAGE_PIN L21 [get_ports rst_n]
 set_property PULLUP true [get_ports rst_n]
@@ -77,13 +74,19 @@ set_property DRIVE 8 [get_ports {cmd_in[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports dbg_clkout]
 set_property IOSTANDARD LVCMOS33 [get_ports txe]
 set_property IOSTANDARD LVCMOS33 [get_ports rxf]
+set_property IOSTANDARD LVCMOS33 [get_ports {rx_state[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {rx_state[1]}]
 
 set_property PACKAGE_PIN U5 [get_ports dbg_clkout]
 set_property PACKAGE_PIN U9 [get_ports txe]
 set_property PACKAGE_PIN V15 [get_ports rxf]
+set_property PACKAGE_PIN U16 [get_ports {rx_state[0]}]
+set_property PACKAGE_PIN M17 [get_ports {rx_state[1]}]
 
 set_property DRIVE 8 [get_ports dbg_clkout]
 set_property DRIVE 8 [get_ports txe]
 set_property DRIVE 8 [get_ports rxf]
+set_property DRIVE 8 [get_ports {rx_state[0]}]
+set_property DRIVE 8 [get_ports {rx_state[1]}]
 
 

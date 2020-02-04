@@ -19,7 +19,9 @@ module usb_interface(
     output wire rxf,
     output wire txe,
     output wire [7:0]cmd_in,
-    output wire [1:0]rx_state
+    output wire rx_state_idle,
+    output wire rx_state_active,
+    output wire rx_state_escaped,
 );
     assign dbg_clkout = clkout;
     assign rxf = ~rxf_n;
@@ -62,7 +64,9 @@ module usb_interface(
         .data_ready(rx_data_ready),
         .cmd_msg(cmd_in),
         .cmd_valid(cmd_valid),
-        .state(rx_state)
+        .state_idle(rx_state_idle),
+        .state_active(rx_state_active),
+        .state_escaped(rx_state_escaped)
     );
 
     

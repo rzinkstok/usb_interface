@@ -11,7 +11,9 @@ module cmd_receiver(
     // Output commands
     output reg [7:0] cmd_msg,
     output reg cmd_valid,
-    output reg [1:0] state
+    output reg state_idle,
+    output reg state_active,
+    output reg state_escaped
 );
     
     /*******************************************************************************.
@@ -27,8 +29,11 @@ module cmd_receiver(
     `define SLIP_ESC_END 8'hDC
     `define SLIP_ESC_ESC 8'hDD
     
-    //reg [1:0] state;
+    reg [1:0] state;
     reg [1:0] next_state;
+    assign state_idle = (state == IDLE);
+    assign state_active = (state == ACTIVE);
+    assign state_escaped = (state == ESCAPED);
     
     // Un-SLIPped data ready for writing to the command being processed, and
     // associated validity flag

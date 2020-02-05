@@ -1,4 +1,4 @@
 Vivado Simulator 2019.1
 Time resolution is 1 ps
                    0<< Starting simulation >>
-$finish called at time : 2016703 ps : File "/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sim_1/new/usb_interface_tb.v" Line 123
+$finish called at time : 2016703 ps : File "/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sim_1/new/usb_interface_tb.v" Line 129

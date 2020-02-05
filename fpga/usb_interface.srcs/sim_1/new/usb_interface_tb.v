@@ -18,6 +18,9 @@ module usb_interface_tb();
     wire rxf;
     wire txe;
     wire [7:0] cmd_in;
+    wire rx_state_idle;
+    wire rx_state_active;
+    wire rx_state_escaped;
     
     always #16.667 clkout = ~clkout;
     //always #10 clk = ~clk;
@@ -38,7 +41,10 @@ module usb_interface_tb();
         .dbg_clkout(dbg_clkout),
         .rxf(rxf),
         .txe(txe),
-        .cmd_in(cmd_in)
+        .cmd_in(cmd_in),
+        .rx_state_idle(rx_state_idle),
+        .rx_state_active(rx_state_active),
+        .rx_state_escaped(rx_state_escaped)
     );
     
     initial begin

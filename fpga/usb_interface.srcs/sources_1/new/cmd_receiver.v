@@ -11,9 +11,9 @@ module cmd_receiver(
     // Output commands
     output reg [7:0] cmd_msg,
     output reg cmd_valid,
-    output reg state_idle,
-    output reg state_active,
-    output reg state_escaped
+    output wire state_idle,
+    output wire state_active,
+    output wire state_escaped
 );
     
     /*******************************************************************************.

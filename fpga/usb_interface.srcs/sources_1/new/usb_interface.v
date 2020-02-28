@@ -18,10 +18,11 @@ module usb_interface(
     output wire dbg_clkout,
     output wire rxf,
     output wire txe,
-    output wire [7:0]cmd_in,
+    //output wire [23:0]cmd_in,
     output wire rx_state_idle,
     output wire rx_state_active,
-    output wire rx_state_escaped
+    output wire rx_state_escaped,
+    output wire cmd_valid
 );
     assign dbg_clkout = clkout;
     assign rxf = ~rxf_n;
@@ -47,20 +48,25 @@ module usb_interface(
     assign oe_n = ~((state == READ1) | (state == READ2));
     assign rd_n = (state != READ2);
     
+    // Prevent data from showing up after rxf_n has gone high
+    wire [7:0] rxf_data;
+    assign rxf_data = rxf_n ? 8'bZ : data;
     
     /*******************************************************************************.
     * Command Receiver                                                              *
     '*******************************************************************************/
     // As long as we are in READ2, new RX data is available from the chip
+    // As READ2 lasts 1 cycle longer than needed, add the rxf_n dependency.
     wire rx_data_ready;
-    assign rx_data_ready = (state == READ2);
-    wire cmd_valid;
+    assign rx_data_ready = (state == READ2) & (~rxf_n);
+    wire [32:0] cmd_in;
+    //wire cmd_valid;
     
     // Command receiver
     cmd_receiver cmd_rx(
         .clk(clkout),
         .rst_n(rst_n),
-        .data(data),
+        .data(rxf_data),
         .data_ready(rx_data_ready),
         .cmd_msg(cmd_in),
         .cmd_valid(cmd_valid),

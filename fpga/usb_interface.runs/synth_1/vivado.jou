@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sun Feb  2 14:41:21 2020
-# Process ID: 21160
+# Start of session at: Sun Feb 16 14:07:00 2020
+# Process ID: 18788
 # Current directory: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1
 # Command line: vivado -log usb_interface.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source usb_interface.tcl
 # Log file: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/usb_interface.vds

@@ -17,7 +17,7 @@ module usb_interface_tb();
     wire dbg_clkout;
     wire rxf;
     wire txe;
-    wire [7:0] cmd_in;
+    //wire [23:0] cmd_in;
     wire rx_state_idle;
     wire rx_state_active;
     wire rx_state_escaped;
@@ -25,7 +25,7 @@ module usb_interface_tb();
     always #16.667 clkout = ~clkout;
     //always #10 clk = ~clk;
     
-    assign data = (~rd_n) ? data_in : 8'bZ;
+    assign data = (~oe_n) ? data_in : 8'bZ; // Was dependent on rd_n
     
     usb_interface usb(
         .rst_n(rst_n),
@@ -41,7 +41,7 @@ module usb_interface_tb();
         .dbg_clkout(dbg_clkout),
         .rxf(rxf),
         .txe(txe),
-        .cmd_in(cmd_in),
+        //.cmd_in(cmd_in),
         .rx_state_idle(rx_state_idle),
         .rx_state_active(rx_state_active),
         .rx_state_escaped(rx_state_escaped)
@@ -57,75 +57,120 @@ module usb_interface_tb();
         data_in = 8'h00;
         
         #20 rst_n = 1'b1;
-        #100 rxf_n = 1'b0;
-        @(negedge oe_n) data_in = 8'hC0;
+        #200 begin
+            rxf_n = 1'b0;
+            data_in = 8'hC0;
+        end
+        @(negedge oe_n);
         @(negedge rd_n);
-        @(posedge clkout) data_in = 8'h01;
-        //@(posedge clkout) data_in = 8'h12;
-        //@(posedge clkout) data_in = 8'h34;
-        //@(posedge clkout) data_in = 8'h56;
-        //@(posedge clkout) data_in = 8'h78;
+        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hC0;
-        rxf_n = 1'b1;
+        @(posedge clkout) rxf_n = 1'b1;
     
-        #200 rxf_n = 1'b0;
-        @(negedge oe_n) data_in = 8'hC0;
+        #200 begin
+            rxf_n = 1'b0;
+            data_in = 8'hC0;
+        end
+        @(negedge oe_n);
         @(negedge rd_n);
-        //@(posedge clkout) data_in = 8'h02;
         @(posedge clkout) data_in = 8'hDB;
         @(posedge clkout) data_in = 8'hDC;
-        //@(posedge clkout) data_in = 8'hDB;
-        //@(posedge clkout) data_in = 8'hDD;
+        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hC0;
-        rxf_n = 1'b1;
+        @(posedge clkout) rxf_n = 1'b1;
     
-        #200 rxf_n = 1'b0;
-        @(negedge oe_n) data_in = 8'hC0;
+        #200 begin 
+            rxf_n = 1'b0;
+            data_in = 8'hC0;
+        end
+        @(negedge oe_n);
         @(negedge rd_n);
-        @(posedge clkout) data_in = 8'h03;
-        //@(posedge clkout) data_in = 8'hDB;
-        //@(posedge clkout) data_in = 8'hA0;
-        //@(posedge clkout) data_in = 8'hDB;
-        //@(posedge clkout) data_in = 8'hDD;
+        @(posedge clkout) data_in = 8'h12;
+        @(posedge clkout) data_in = 8'h34;
+        @(posedge clkout) data_in = 8'h56;
         @(posedge clkout) data_in = 8'hC0;
-        rxf_n = 1'b1;
+        @(posedge clkout) rxf_n = 1'b1;
     
-        #200 rxf_n = 1'b0;
-        @(negedge oe_n) data_in = 8'hC0;
+        #200 begin
+            rxf_n = 1'b0;
+            data_in = 8'hC0;
+        end
+        @(negedge oe_n);
         @(negedge rd_n);
         @(posedge clkout) data_in = 8'hDB;
         @(posedge clkout) data_in = 8'hDD;
-        //@(posedge clkout) data_in = 8'h2A;
-        //@(posedge clkout) data_in = 8'h3B;
-        //@(posedge clkout) data_in = 8'h4C;
-        //@(posedge clkout) data_in = 8'h5D;
-        //@(posedge clkout) data_in = 8'h6E;
-        //@(posedge clkout) data_in = 8'h7F;
+        @(posedge clkout) data_in = 8'hDB;
+        @(posedge clkout) data_in = 8'hDC;
+        @(posedge clkout) data_in = 8'h56;
         @(posedge clkout) data_in = 8'hC0;
-        rxf_n = 1'b1;
+        
+        @(posedge clkout) rxf_n = 1'b1;
     
-        #200 rxf_n = 1'b0;
-        @(negedge oe_n) data_in = 8'hC0;
+        #200 begin
+            rxf_n = 1'b0;
+            data_in = 8'hC0;
+        end
+        @(negedge oe_n);
         @(negedge rd_n);
-        @(posedge clkout) data_in = 8'h05;
-        //@(posedge clkout) data_in = 8'h00;
-        //@(posedge clkout) data_in = 8'h00;
-        //@(posedge clkout) data_in = 8'h00;
-        //@(posedge clkout) data_in = 8'h01;
+        @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hC0;
-        rxf_n = 1'b1;
+        @(posedge clkout) rxf_n = 1'b1;
     
-        #200 rxf_n = 1'b0;
-        @(negedge oe_n) data_in = 8'hC0;
+        #200 begin
+            rxf_n = 1'b0;
+            data_in = 8'hC0;
+        end
+        @(negedge oe_n);
         @(negedge rd_n);
-        @(posedge clkout) data_in = 8'h06;
-        //@(posedge clkout) data_in = 8'h00;
-        //@(posedge clkout) data_in = 8'h00;
-        //@(posedge clkout) data_in = 8'h00;
-        //@(posedge clkout) data_in = 8'h00;
+        @(posedge clkout) data_in = 8'h12;
+        @(posedge clkout) data_in = 8'h34;
+        @(posedge clkout) data_in = 8'h56;
+        @(posedge clkout) data_in = 8'h78;
+        //@(posedge clkout) data_in = 8'h90;
         @(posedge clkout) data_in = 8'hC0;
-        rxf_n = 1'b1;
+        @(posedge clkout) rxf_n = 1'b1;
+        
+        #200 begin
+            rxf_n = 1'b0;
+            data_in = 8'hC0;
+        end
+        @(negedge oe_n);
+        @(negedge rd_n);
+        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'hC0;
+        @(posedge clkout) rxf_n = 1'b1;
+        
+        #200 begin
+            rxf_n = 1'b0;
+            data_in = 8'hC0;
+        end
+        @(negedge oe_n);
+        @(negedge rd_n);
+        @(posedge clkout) data_in = 8'hDB;
+        @(posedge clkout) data_in = 8'hDC;
+        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'hC0;
+        @(posedge clkout) rxf_n = 1'b1;
     
+        #200 begin
+            rxf_n = 1'b0;
+            data_in = 8'hC0;
+        end
+        @(negedge oe_n);
+        @(negedge rd_n);
+        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'hC0;
+        @(posedge clkout) rxf_n = 1'b1;
+        
+        
         #200 $finish;
     end
 

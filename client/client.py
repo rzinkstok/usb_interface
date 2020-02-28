@@ -30,15 +30,16 @@ def tobinary(i):
     print(f"{i:b}")
 
 
-def write_byte(dev, i, y=False):
-    m = slip(bytes([i]))
+def write_bytes(dev, b, y=False):
+    print(len(b))
+    m = slip(bytes(b))
     print(m)
-    print(f"{i:08b}")
-    if(len(m)>3):
-        print("-------------------------------------------------------------------------------")
+    #print(f"{i:08b}")
+    #if(len(m)>3):
+    #    print("-------------------------------------------------------------------------------")
     dev.write(m)
     if y:
-        time.sleep(0.4)
+        time.sleep(0.2)
     else:
         input()
 
@@ -52,16 +53,22 @@ with Device() as dev:
     dev.ftdi_fn.ftdi_setflowctrl(0)
     dev.ftdi_fn.ftdi_usb_purge_buffers()
 
-    #while True:
-    #    i = random.randint(0, 256)
-    #    write_byte(dev, i)
-    while True:
-        write_byte(dev, 255)
-        write_byte(dev, 192)
-        write_byte(dev, 255)
-        write_byte(dev, 219)
-        write_byte(dev, 255)
-        write_byte(dev, 192)
-        write_byte(dev, 255)
-        write_byte(dev, 219)
-        write_byte(dev, 255)
+    if False:
+        while True:
+            i = random.randint(0, 255)
+            print(i)
+            write_bytes(dev, i, y=True)
+    else:
+        while True:
+            write_bytes(dev, [254, 253, 252])
+            write_bytes(dev, [192, 219, 255])  # Escape END
+            write_bytes(dev, [254, 13, 15])
+            write_bytes(dev, [15, 219, 34])  # Escape ESC
+            write_bytes(dev, [254, 1, 1])
+            write_bytes(dev, [192, 1, 2, 3])
+            write_bytes(dev, [254, 2, 2])
+            write_bytes(dev, [2, 219])
+            write_bytes(dev, [2, 2, 219])
+            write_bytes(dev, [254])
+            write_bytes(dev, [254])
+            write_bytes(dev, [1, 2, 192])

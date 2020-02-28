@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date             : Sun Feb  2 14:42:48 2020
-| Host             : fpgadev running 64-bit Ubuntu 18.04.3 LTS
+| Date             : Sun Feb 16 14:08:44 2020
+| Host             : fpgadev running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file usb_interface_power_routed.rpt -pb usb_interface_power_summary_routed.pb -rpx usb_interface_power_routed.rpx
 | Design           : usb_interface
 | Device           : xc7z020clg484-1
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+---------------------------------+
-| Total On-Chip Power (W)  | 9.768 (Junction temp exceeded!) |
-| Design Power Budget (W)  | Unspecified*                    |
-| Power Budget Margin (W)  | NA                              |
-| Dynamic (W)              | 8.727                           |
-| Device Static (W)        | 1.041                           |
-| Effective TJA (C/W)      | 11.5                            |
-| Max Ambient (C)          | 0.0                             |
-| Junction Temperature (C) | 125.0                           |
-| Confidence Level         | Low                             |
-| Setting File             | ---                             |
-| Simulation Activity File | ---                             |
-| Design Nets Matched      | NA                              |
-+--------------------------+---------------------------------+
++--------------------------+----------------------------------+
+| Total On-Chip Power (W)  | 10.871 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                     |
+| Power Budget Margin (W)  | NA                               |
+| Dynamic (W)              | 9.830                            |
+| Device Static (W)        | 1.041                            |
+| Effective TJA (C/W)      | 11.5                             |
+| Max Ambient (C)          | 0.0                              |
+| Junction Temperature (C) | 125.0                            |
+| Confidence Level         | Low                              |
+| Setting File             | ---                              |
+| Simulation Activity File | ---                              |
+| Design Nets Matched      | NA                               |
++--------------------------+----------------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.128 |       62 |       --- |             --- |
-|   LUT as Logic |     0.120 |       33 |     53200 |            0.06 |
+| Slice Logic    |     0.150 |       56 |       --- |             --- |
+|   LUT as Logic |     0.141 |       29 |     53200 |            0.05 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Register     |     0.002 |       15 |    106400 |            0.01 |
-|   Others       |     0.000 |        2 |       --- |             --- |
-| Signals        |     0.169 |       57 |       --- |             --- |
-| I/O            |     8.429 |       29 |       200 |           14.50 |
+|   Register     |     0.004 |        8 |    106400 |           <0.01 |
+|   Others       |     0.000 |        4 |       --- |             --- |
+| Signals        |     0.159 |       58 |       --- |             --- |
+| I/O            |     9.521 |       23 |       200 |           11.50 |
 | Static Power   |     1.041 |          |           |                 |
-| Total          |     9.768 |          |           |                 |
+| Total          |    10.871 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,9 +70,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.640 |       0.341 |      0.299 |
-| Vccaux    |       1.800 |     0.224 |       0.124 |      0.100 |
-| Vcco33    |       3.300 |     2.475 |       2.474 |      0.001 |
+| Vccint    |       1.000 |     0.652 |       0.353 |      0.299 |
+| Vccaux    |       1.800 |     0.240 |       0.140 |      0.100 |
+| Vcco33    |       3.300 |     2.797 |       2.796 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -144,8 +144,8 @@ Table of Contents
 +---------------+-----------+
 | Name          | Power (W) |
 +---------------+-----------+
-| usb_interface |     8.727 |
-|   cmd_rx      |     0.103 |
+| usb_interface |     9.830 |
+|   cmd_rx      |     0.159 |
 +---------------+-----------+
 
 

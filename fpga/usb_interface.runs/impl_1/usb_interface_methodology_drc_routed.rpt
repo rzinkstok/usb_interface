@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Sun Feb  2 14:42:47 2020
-| Host         : fpgadev running 64-bit Ubuntu 18.04.3 LTS
+| Date         : Sun Feb 16 14:08:43 2020
+| Host         : fpgadev running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_methodology -file usb_interface_methodology_drc_routed.rpt -pb usb_interface_methodology_drc_routed.pb -rpx usb_interface_methodology_drc_routed.rpx
 | Design       : usb_interface
 | Device       : xc7z020clg484-1
@@ -23,12 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 16
+             Violations found: 9
 +-----------+------------------+------------------------------+------------+
 | Rule      | Severity         | Description                  | Violations |
 +-----------+------------------+------------------------------+------------+
-| TIMING-17 | Critical Warning | Non-clocked sequential cell  | 15         |
+| TIMING-17 | Critical Warning | Non-clocked sequential cell  | 7          |
 | LUTAR-1   | Warning          | LUT drives async reset alert | 1          |
+| TIMING-20 | Warning          | Non-clocked latch            | 1          |
 +-----------+------------------+------------------------------+------------+
 
 2. REPORT DETAILS
@@ -55,62 +56,27 @@ Related violations: <none>
 
 TIMING-17#5 Critical Warning
 Non-clocked sequential cell  
-The clock pin cmd_rx/cmd_msg_reg[0]/C is not reached by a timing clock
+The clock pin cmd_rx/write_index_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#6 Critical Warning
 Non-clocked sequential cell  
-The clock pin cmd_rx/cmd_msg_reg[1]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#7 Critical Warning
-Non-clocked sequential cell  
-The clock pin cmd_rx/cmd_msg_reg[2]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#8 Critical Warning
-Non-clocked sequential cell  
-The clock pin cmd_rx/cmd_msg_reg[3]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#9 Critical Warning
-Non-clocked sequential cell  
-The clock pin cmd_rx/cmd_msg_reg[4]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#10 Critical Warning
-Non-clocked sequential cell  
-The clock pin cmd_rx/cmd_msg_reg[5]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#11 Critical Warning
-Non-clocked sequential cell  
-The clock pin cmd_rx/cmd_msg_reg[6]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#12 Critical Warning
-Non-clocked sequential cell  
-The clock pin cmd_rx/cmd_msg_reg[7]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#13 Critical Warning
-Non-clocked sequential cell  
-The clock pin cmd_rx/write_index_reg[0]/C is not reached by a timing clock
-Related violations: <none>
-
-TIMING-17#14 Critical Warning
-Non-clocked sequential cell  
 The clock pin cmd_rx/write_index_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
-TIMING-17#15 Critical Warning
+TIMING-17#7 Critical Warning
 Non-clocked sequential cell  
 The clock pin cmd_rx/write_index_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell cmd_rx/FSM_sequential_state[1]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) FSM_sequential_state_reg[0]/CLR, FSM_sequential_state_reg[1]/CLR, cmd_rx/FSM_sequential_state_reg[0]/CLR, cmd_rx/FSM_sequential_state_reg[1]/CLR, cmd_rx/cmd_msg_reg[0]/CLR, cmd_rx/cmd_msg_reg[1]/CLR, cmd_rx/cmd_msg_reg[2]/CLR, cmd_rx/cmd_msg_reg[3]/CLR, cmd_rx/cmd_msg_reg[4]/CLR, cmd_rx/cmd_msg_reg[5]/CLR, cmd_rx/cmd_msg_reg[6]/CLR, cmd_rx/cmd_msg_reg[7]/CLR, cmd_rx/write_index_reg[0]/CLR, cmd_rx/write_index_reg[1]/CLR, cmd_rx/write_index_reg[2]/CLR (the first 15 of 15 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell cmd_rx/FSM_sequential_state[1]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) FSM_sequential_state_reg[0]/CLR, FSM_sequential_state_reg[1]/CLR, cmd_rx/FSM_sequential_state_reg[0]/CLR, cmd_rx/FSM_sequential_state_reg[1]/CLR, cmd_rx/write_index_reg[0]/CLR, cmd_rx/write_index_reg[1]/CLR, cmd_rx/write_index_reg[2]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch cmd_rx/cmd_valid_reg cannot be properly analyzed as its control pin cmd_rx/cmd_valid_reg/G is not reached by a timing clock
 Related violations: <none>
 
 

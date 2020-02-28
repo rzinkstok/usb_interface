@@ -1,39 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1580650878">
-  <File Type="PA-TCL" Name="usb_interface.tcl"/>
-  <File Type="REPORTS-TCL" Name="usb_interface_reports.tcl"/>
-  <File Type="OPT-DCP" Name="usb_interface_opt.dcp"/>
-  <File Type="OPT-DRC" Name="usb_interface_drc_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="usb_interface.hwdef"/>
-  <File Type="PWROPT-DCP" Name="usb_interface_pwropt.dcp"/>
-  <File Type="PLACE-DCP" Name="usb_interface_placed.dcp"/>
-  <File Type="PLACE-IO" Name="usb_interface_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="usb_interface_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="usb_interface_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="usb_interface_control_sets_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="usb_interface_incremental_reuse_pre_placed.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="usb_interface_postplace_pwropt.dcp"/>
-  <File Type="BITSTR-LTX" Name="usb_interface.ltx"/>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1581858417">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BG-BIT" Name="usb_interface.bit"/>
-  <File Type="ROUTE-BUS-SKEW" Name="usb_interface_bus_skew_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="usb_interface.msk"/>
-  <File Type="BG-BGN" Name="usb_interface.bgn"/>
-  <File Type="BG-BIN" Name="usb_interface.bin"/>
   <File Type="RDI-RDI" Name="usb_interface.vdi"/>
-  <File Type="ROUTE-DRC-RPX" Name="usb_interface_drc_routed.rpx"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="usb_interface_bus_skew_routed.rpx"/>
   <File Type="BG-DRC" Name="usb_interface.drc"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="usb_interface_postroute_physopt.dcp"/>
-  <File Type="BITSTR-MMI" Name="usb_interface.mmi"/>
+  <File Type="BG-BGN" Name="usb_interface.bgn"/>
   <File Type="BITSTR-SYSDEF" Name="usb_interface.sysdef"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="usb_interface_postroute_physopt_bb.dcp"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="usb_interface.ltx"/>
+  <File Type="BITSTR-MMI" Name="usb_interface.mmi"/>
   <File Type="BITSTR-BMM" Name="usb_interface_bd.bmm"/>
   <File Type="BITSTR-NKY" Name="usb_interface.nky"/>
-  <File Type="PHYSOPT-DCP" Name="usb_interface_physopt.dcp"/>
   <File Type="BITSTR-RBT" Name="usb_interface.rbt"/>
+  <File Type="BITSTR-MSK" Name="usb_interface.msk"/>
+  <File Type="BG-BIN" Name="usb_interface.bin"/>
+  <File Type="BG-BIT" Name="usb_interface.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="usb_interface_bus_skew_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="usb_interface_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="usb_interface_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="usb_interface_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="usb_interface_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="usb_interface_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="usb_interface_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="usb_interface_postroute_physopt.dcp"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="usb_interface_bus_skew_routed.rpx"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="usb_interface_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW" Name="usb_interface_bus_skew_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="usb_interface_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-SIMILARITY" Name="usb_interface_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-TIMING-RPX" Name="usb_interface_timing_summary_routed.rpx"/>
   <File Type="ROUTE-TIMING-PB" Name="usb_interface_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="usb_interface_timing_summary_routed.rpt"/>
@@ -45,11 +38,37 @@
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="usb_interface_methodology_drc_routed.pb"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="usb_interface_methodology_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="usb_interface_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="usb_interface_drc_routed.rpx"/>
   <File Type="ROUTE-DRC-PB" Name="usb_interface_drc_routed.pb"/>
   <File Type="ROUTE-DRC" Name="usb_interface_drc_routed.rpt"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="usb_interface_routed_bb.dcp"/>
   <File Type="ROUTE-DCP" Name="usb_interface_routed.dcp"/>
   <File Type="ROUTE-ERROR-DCP" Name="usb_interface_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="usb_interface_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="usb_interface_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="usb_interface_physopt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="usb_interface_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="usb_interface_postplace_pwropt.dcp"/>
+  <File Type="PLACE-TIMING" Name="usb_interface_timing_summary_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="usb_interface_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="usb_interface_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="usb_interface_control_sets_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="usb_interface_utilization_placed.pb"/>
+  <File Type="PLACE-UTIL" Name="usb_interface_utilization_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="usb_interface_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-IO" Name="usb_interface_io_placed.rpt"/>
+  <File Type="PLACE-DCP" Name="usb_interface_placed.dcp"/>
+  <File Type="PWROPT-DRC" Name="usb_interface_drc_pwropted.rpt"/>
+  <File Type="PWROPT-DCP" Name="usb_interface_pwropt.dcp"/>
+  <File Type="OPT-HWDEF" Name="usb_interface.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="usb_interface_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DRC" Name="usb_interface_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="usb_interface_opt.dcp"/>
+  <File Type="INIT-TIMING" Name="usb_interface_timing_summary_init.rpt"/>
+  <File Type="PWROPT-TIMING" Name="usb_interface_timing_summary_pwropted.rpt"/>
+  <File Type="REPORTS-TCL" Name="usb_interface_reports.tcl"/>
+  <File Type="OPT-TIMING" Name="usb_interface_timing_summary_opted.rpt"/>
+  <File Type="PA-TCL" Name="usb_interface.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/cmd_receiver.v">

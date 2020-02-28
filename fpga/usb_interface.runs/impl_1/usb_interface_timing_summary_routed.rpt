@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Sun Feb  2 14:42:48 2020
-| Host         : fpgadev running 64-bit Ubuntu 18.04.3 LTS
+| Date         : Sun Feb 16 14:08:44 2020
+| Host         : fpgadev running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_timing_summary -max_paths 10 -file usb_interface_timing_summary_routed.rpt -pb usb_interface_timing_summary_routed.pb -rpx usb_interface_timing_summary_routed.rpx -warn_on_violation
 | Design       : usb_interface
 | Device       : 7z020-clg484
@@ -53,7 +53,39 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 15 register/latch pins with no clock driven by root clock pin: clkout (HIGH)
+ There are 7 register/latch pins with no clock driven by root clock pin: clkout (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: data[0] (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: data[1] (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: data[2] (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: data[3] (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: data[4] (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: data[5] (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: data[6] (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: data[7] (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: rxf_n (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM_sequential_state_reg[0]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: FSM_sequential_state_reg[1]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: cmd_rx/FSM_sequential_state_reg[0]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: cmd_rx/FSM_sequential_state_reg[1]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: cmd_rx/write_index_reg[0]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: cmd_rx/write_index_reg[1]/Q (HIGH)
+
+ There is 1 register/latch pin with no clock driven by root clock pin: cmd_rx/write_index_reg[2]/Q (HIGH)
 
 
 2. checking constant_clock
@@ -68,7 +100,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 38 pins that are not constrained for maximum delay. (HIGH)
+ There are 15 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -82,7 +114,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There are 13 ports with no output delay specified. (HIGH)
+ There are 7 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1583175082">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1583185536">
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="RDI-RDI" Name="usb_interface.vdi"/>
   <File Type="BG-DRC" Name="usb_interface.drc"/>
@@ -71,6 +71,12 @@
   <File Type="PA-TCL" Name="usb_interface.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/monitor_defs.v">
+      <FileInfo SFType="VHeader">
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/cmd_receiver.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>

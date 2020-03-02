@@ -1,4 +1,8 @@
 `timescale 1ns / 1ps
+`default_nettype none
+
+`include "monitor_defs.v"
+
 
 module cmd_receiver(
     input wire clk,
@@ -9,12 +13,8 @@ module cmd_receiver(
     input wire data_ready,
 
     // Output commands
-    output reg [23:0] cmd_msg,
     output reg cmd_valid,
-    output wire state_idle,
-    output wire state_active,
-    output wire state_escaped,
-    output reg [2:0] write_index
+    output reg [39:0] cmd_msg
 );
     
     /*******************************************************************************.
@@ -24,17 +24,8 @@ module cmd_receiver(
                ACTIVE = 1,
                ESCAPED = 2;
                
-    // SLIP special characters
-    `define SLIP_END     8'hC0
-    `define SLIP_ESC     8'hDB
-    `define SLIP_ESC_END 8'hDC
-    `define SLIP_ESC_ESC 8'hDD
-    
     reg [1:0] state;
     reg [1:0] next_state;
-    assign state_idle = (state == IDLE);
-    assign state_active = (state == ACTIVE);
-    assign state_escaped = (state == ESCAPED);
     
     // Un-SLIPped data ready for writing to the command being processed, and
     // associated validity flag
@@ -44,36 +35,39 @@ module cmd_receiver(
     reg cmd_valid_q;
     
     // Current byte index into the command being processed
-    //reg [2:0] write_index;
+    reg [2:0] write_index;
     reg [2:0] write_index_q;
     
     // Expected message length based on the first byte (write commands will have
     // the MSB of the first byte set)
     wire [2:0] msg_length;
     assign msg_length = 3'd3;
-
+    assign msg_length = (cmd_msg[39]) ? `MSG_WRITE_LENGTH : `MSG_READ_LENGTH;
+    
     /*******************************************************************************.
     * Command Receiver State Machine                                                *
     '*******************************************************************************/
     always @(posedge clk or negedge rst_n) begin
         if (~rst_n) begin
             state <= IDLE;
-            write_index <= 1'b0;
-            cmd_msg <= 24'b0;
+            write_index <= 3'b0;
+            cmd_msg <= 40'b0;
             cmd_valid <= 1'b0;
-            //cmd_valid_q <= 1'b0;
         end else begin
             state <= next_state;
             write_index <= write_index_q;
             cmd_valid <= cmd_valid_q;
             
             if (state == IDLE) begin
-                cmd_msg <= 24'b0; // removed for debugging
+                cmd_msg <= 40'b0; // remove for debugging
             end else if (data_valid) begin
+                // A byte has been un-SLIPped and is ready for writing
                 case (write_index)
-                    3'd0: cmd_msg[23:16] <= data_q;
-                    3'd1: cmd_msg[15:8]  <= data_q;
-                    3'd2: cmd_msg[7:0]   <= data_q;
+                    3'd0: cmd_msg[39:32] <= data_q;
+                    3'd1: cmd_msg[31:24] <= data_q;
+                    3'd2: cmd_msg[23:16] <= data_q;
+                    3'd3: cmd_msg[15:8]  <= data_q;
+                    3'd4: cmd_msg[7:0]   <= data_q;
                 endcase
             end
         end
@@ -82,10 +76,9 @@ module cmd_receiver(
     always @(*) begin
         next_state = state;
         write_index_q = write_index;
-        cmd_valid_q = cmd_valid;
         data_q = 8'b0;
         data_valid = 1'b0;
-        //cmd_valid = 1'b0; // removed for debugging
+        cmd_valid_q = 1'b0; // cmd_valid; // for debugging
         
         if (data_ready) begin
             case (state)
@@ -94,7 +87,6 @@ module cmd_receiver(
                     if (data == `SLIP_END) begin
                         next_state = ACTIVE;
                         write_index_q = 3'd0;
-                        cmd_valid_q = 1'b0;
                     end
                 end
         
@@ -106,14 +98,9 @@ module cmd_receiver(
                             next_state = IDLE;  
                             if (write_index == msg_length) begin
                                 cmd_valid_q = 1'b1;
-                                write_index_q = 3'd6;
-                            end else begin
-                                write_index_q = 3'd5;
-                            //    cmd_valid = 1'b0;
                             end
                         end
                     end else if (write_index < msg_length) begin
-                        //cmd_valid = 1'b0; // Added for debugging
                         // We've gotten some other byte, and still have room left for
                         // it in the current message. Check to see if it's an ESCAPE.
                         if (data == `SLIP_ESC) begin
@@ -131,7 +118,6 @@ module cmd_receiver(
                         // We've gotten more bytes than expected for the current
                         // command type. Abort this command and wait for the next.
                         next_state = IDLE;
-                        write_index_q = 3'd7;
                     end
                 end
                 
@@ -156,3 +142,5 @@ module cmd_receiver(
         end
     end
 endmodule
+
+`default_nettype wire

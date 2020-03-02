@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -30,6 +29,8 @@ set_property target_language Verilog [current_project]
 set_property board_part numato.com:styx:part0:1.0 [current_project]
 set_property ip_output_repo /home/rzinkstok/usb_interface/fpga/usb_interface.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+read_verilog /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/monitor_defs.v
+set_property file_type "Verilog Header" [get_files /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/monitor_defs.v]
 read_verilog -library xil_defaultlib {
   /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v
   /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/usb_interface.v

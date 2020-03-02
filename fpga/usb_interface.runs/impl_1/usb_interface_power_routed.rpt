@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date             : Mon Mar  2 19:53:17 2020
+| Date             : Mon Mar  2 22:47:24 2020
 | Host             : fpgadev running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file usb_interface_power_routed.rpt -pb usb_interface_power_summary_routed.pb -rpx usb_interface_power_routed.rpx
 | Design           : usb_interface
@@ -29,20 +29,20 @@ Table of Contents
 1. Summary
 ----------
 
-+--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 15.272 (Junction temp exceeded!) |
-| Design Power Budget (W)  | Unspecified*                     |
-| Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 14.232                           |
-| Device Static (W)        | 1.041                            |
-| Effective TJA (C/W)      | 11.5                             |
-| Max Ambient (C)          | 0.0                              |
-| Junction Temperature (C) | 125.0                            |
-| Confidence Level         | Low                              |
-| Setting File             | ---                              |
-| Simulation Activity File | ---                              |
-| Design Nets Matched      | NA                               |
-+--------------------------+----------------------------------+
++--------------------------+---------------------------------+
+| Total On-Chip Power (W)  | 7.814 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                    |
+| Power Budget Margin (W)  | NA                              |
+| Dynamic (W)              | 7.052                           |
+| Device Static (W)        | 0.762                           |
+| Effective TJA (C/W)      | 11.5                            |
+| Max Ambient (C)          | 0.0                             |
+| Junction Temperature (C) | 115.1                           |
+| Confidence Level         | Low                             |
+| Setting File             | ---                             |
+| Simulation Activity File | ---                             |
+| Design Nets Matched      | NA                              |
++--------------------------+---------------------------------+
 * Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
 
 
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.170 |       66 |       --- |             --- |
-|   LUT as Logic |     0.161 |       37 |     53200 |            0.07 |
+| Slice Logic    |     0.070 |       11 |       --- |             --- |
+|   LUT as Logic |     0.061 |        5 |     53200 |           <0.01 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Register     |     0.003 |        8 |    106400 |           <0.01 |
-|   Others       |     0.000 |        2 |       --- |             --- |
-| Signals        |     0.285 |       70 |       --- |             --- |
-| I/O            |    13.776 |       30 |       200 |           15.00 |
-| Static Power   |     1.041 |          |           |                 |
-| Total          |    15.272 |          |           |                 |
+|   Register     |     0.003 |        2 |    106400 |           <0.01 |
+|   Others       |     0.000 |        1 |       --- |             --- |
+| Signals        |     0.089 |       12 |       --- |             --- |
+| I/O            |     6.894 |        9 |       200 |            4.50 |
+| Static Power   |     0.762 |          |           |                 |
+| Total          |     7.814 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,20 +70,20 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.798 |       0.499 |      0.299 |
-| Vccaux    |       1.800 |     0.302 |       0.202 |      0.100 |
-| Vcco33    |       3.300 |     4.052 |       4.051 |      0.001 |
+| Vccint    |       1.000 |     0.385 |       0.171 |      0.215 |
+| Vccaux    |       1.800 |     0.179 |       0.101 |      0.078 |
+| Vcco33    |       3.300 |     2.031 |       2.030 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.026 |       0.000 |      0.026 |
+| Vccbram   |       1.000 |     0.016 |       0.000 |      0.016 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.473 |       0.000 |      0.473 |
+| Vccpint   |       1.000 |     0.328 |       0.000 |      0.328 |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -144,8 +144,7 @@ Table of Contents
 +---------------+-----------+
 | Name          | Power (W) |
 +---------------+-----------+
-| usb_interface |    14.232 |
-|   cmd_rx      |     0.294 |
+| usb_interface |     7.052 |
 +---------------+-----------+
 
 

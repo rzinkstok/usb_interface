@@ -15,12 +15,6 @@ module usb_interface_tb();
     reg [7:0] data_in;
     
     wire dbg_clkout;
-    wire rxf;
-    wire txe;
-    //wire [23:0] cmd_in;
-    wire rx_state_idle;
-    wire rx_state_active;
-    wire rx_state_escaped;
     
     always #16.667 clkout = ~clkout;
     //always #10 clk = ~clk;
@@ -29,7 +23,6 @@ module usb_interface_tb();
     
     usb_interface usb(
         .rst_n(rst_n),
-        
         .clkout(clkout),
         .data(data),
         .rxf_n(rxf_n),
@@ -38,13 +31,7 @@ module usb_interface_tb();
         .wr_n(wr_n),
         .oe_n(oe_n),
         .siwu(siwu),
-        .dbg_clkout(dbg_clkout),
-        .rxf(rxf),
-        .txe(txe),
-        //.cmd_in(cmd_in),
-        .rx_state_idle(rx_state_idle),
-        .rx_state_active(rx_state_active),
-        .rx_state_escaped(rx_state_escaped)
+        .dbg_clkout(dbg_clkout)
     );
     
     initial begin
@@ -63,7 +50,7 @@ module usb_interface_tb();
         end
         @(negedge oe_n);
         @(negedge rd_n);
-        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'h7F;
         @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hC0;
@@ -75,9 +62,9 @@ module usb_interface_tb();
         end
         @(negedge oe_n);
         @(negedge rd_n);
+        @(posedge clkout) data_in = 8'h7F;
         @(posedge clkout) data_in = 8'hDB;
         @(posedge clkout) data_in = 8'hDC;
-        @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hC0;
         @(posedge clkout) rxf_n = 1'b1;
@@ -100,11 +87,11 @@ module usb_interface_tb();
         end
         @(negedge oe_n);
         @(negedge rd_n);
+        @(posedge clkout) data_in = 8'h56;
         @(posedge clkout) data_in = 8'hDB;
         @(posedge clkout) data_in = 8'hDD;
         @(posedge clkout) data_in = 8'hDB;
         @(posedge clkout) data_in = 8'hDC;
-        @(posedge clkout) data_in = 8'h56;
         @(posedge clkout) data_in = 8'hC0;
         
         @(posedge clkout) rxf_n = 1'b1;
@@ -139,7 +126,7 @@ module usb_interface_tb();
         end
         @(negedge oe_n);
         @(negedge rd_n);
-        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'h7F;
         @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hC0;
@@ -151,9 +138,9 @@ module usb_interface_tb();
         end
         @(negedge oe_n);
         @(negedge rd_n);
+        @(posedge clkout) data_in = 8'h7F;
         @(posedge clkout) data_in = 8'hDB;
         @(posedge clkout) data_in = 8'hDC;
-        @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hC0;
         @(posedge clkout) rxf_n = 1'b1;
@@ -164,7 +151,7 @@ module usb_interface_tb();
         end
         @(negedge oe_n);
         @(negedge rd_n);
-        @(posedge clkout) data_in = 8'hFF;
+        @(posedge clkout) data_in = 8'h7F;
         @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hFF;
         @(posedge clkout) data_in = 8'hC0;

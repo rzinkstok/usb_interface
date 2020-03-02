@@ -15,23 +15,9 @@ module usb_interface(
     output wire siwu,       // Not used
     
     // Output
-    output wire dbg_clkout,
-    output wire rxf,
-    output wire txe,
-    output wire usb_state_idle,
-    output wire usb_state_read1,
-    output wire usb_state_read2,
-    output wire usb_state_write,
-    
-    output wire rx_state_idle,
-    output wire rx_state_active,
-    output wire rx_state_escaped,
-    output wire cmd_valid,
-    output wire [2:0] write_index
+    output wire dbg_clkout
 );
     assign dbg_clkout = clkout;
-    assign rxf = ~rxf_n;
-    assign txe = ~txe_n;
     
     /*******************************************************************************.
     * FSM States                                                                    *
@@ -57,11 +43,6 @@ module usb_interface(
     wire [7:0] rxf_data;
     assign rxf_data = rxf_n ? 8'bZ : data;
     
-    assign usb_state_idle = (state == IDLE);
-    assign usb_state_read1 = (state == READ1);
-    assign usb_state_read2 = (state == READ2);
-    assign usb_state_write = (state == WRITE);
-    
     /*******************************************************************************.
     * Command Receiver                                                              *
     '*******************************************************************************/
@@ -69,8 +50,9 @@ module usb_interface(
     // As READ2 lasts 1 cycle longer than needed, add the rxf_n dependency.
     wire rx_data_ready;
     assign rx_data_ready = (state == READ2) & (~rxf_n);
-    wire [32:0] cmd_in;
-    //wire cmd_valid;
+    
+    wire [39:0] cmd_in;
+    wire cmd_valid;
     
     // Command receiver
     cmd_receiver cmd_rx(
@@ -78,15 +60,10 @@ module usb_interface(
         .rst_n(rst_n),
         .data(rxf_data),
         .data_ready(rx_data_ready),
-        .cmd_msg(cmd_in),
         .cmd_valid(cmd_valid),
-        .state_idle(rx_state_idle),
-        .state_active(rx_state_active),
-        .state_escaped(rx_state_escaped),
-        .write_index(write_index)
+        .cmd_msg(cmd_in)
     );
 
-    
     /*******************************************************************************.
     * USB Interface State Machine                                                   *
     '*******************************************************************************/
@@ -140,8 +117,7 @@ module usb_interface(
                 end
             end
         endcase
-    end
-        
-        
-    
+    end    
 endmodule
+
+`default_nettype wire

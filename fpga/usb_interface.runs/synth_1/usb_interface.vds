@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Mar  2 19:51:24 2020
-# Process ID: 13181
+# Start of session at: Mon Mar  2 22:45:39 2020
+# Process ID: 26896
 # Current directory: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1
 # Command line: vivado -log usb_interface.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source usb_interface.tcl
 # Log file: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/usb_interface.vds
@@ -16,27 +16,26 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13206 
+INFO: Helper process launched with PID 26917 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1702.414 ; gain = 154.684 ; free physical = 4423 ; free virtual = 9143
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1694.422 ; gain = 154.684 ; free physical = 5487 ; free virtual = 10232
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'usb_interface' [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/usb_interface.v:4]
 	Parameter IDLE bound to: 0 - type: integer 
 	Parameter READ1 bound to: 1 - type: integer 
 	Parameter READ2 bound to: 2 - type: integer 
 	Parameter WRITE bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'cmd_receiver' [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:3]
+INFO: [Synth 8-6157] synthesizing module 'cmd_receiver' [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:7]
 	Parameter IDLE bound to: 0 - type: integer 
 	Parameter ACTIVE bound to: 1 - type: integer 
 	Parameter ESCAPED bound to: 2 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:73]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:91]
-INFO: [Synth 8-6155] done synthesizing module 'cmd_receiver' (1#1) [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:3]
-WARNING: [Synth 8-689] width (33) of port connection 'cmd_msg' does not match port width (24) of module 'cmd_receiver' [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/usb_interface.v:81]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:65]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:84]
+INFO: [Synth 8-6155] done synthesizing module 'cmd_receiver' (1#1) [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:7]
 INFO: [Synth 8-6155] done synthesizing module 'usb_interface' (2#1) [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/usb_interface.v:4]
 WARNING: [Synth 8-3917] design usb_interface has port siwu driven by constant 1
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1756.164 ; gain = 208.434 ; free physical = 4449 ; free virtual = 9169
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1748.172 ; gain = 208.434 ; free physical = 5533 ; free virtual = 10279
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -49,10 +48,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1762.102 ; gain = 214.371 ; free physical = 4445 ; free virtual = 9165
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1754.109 ; gain = 214.371 ; free physical = 5529 ; free virtual = 10275
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1762.102 ; gain = 214.371 ; free physical = 4445 ; free virtual = 9165
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1754.109 ; gain = 214.371 ; free physical = 5529 ; free virtual = 10275
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -64,29 +63,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/usb_interface_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1879.828 ; gain = 0.000 ; free physical = 4357 ; free virtual = 9076
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1866.805 ; gain = 0.000 ; free physical = 5441 ; free virtual = 10187
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1879.828 ; gain = 0.000 ; free physical = 4357 ; free virtual = 9076
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1866.805 ; gain = 0.000 ; free physical = 5441 ; free virtual = 10187
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4421 ; free virtual = 9141
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5507 ; free virtual = 10252
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4421 ; free virtual = 9141
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5507 ; free virtual = 10252
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4421 ; free virtual = 9141
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:13 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5507 ; free virtual = 10252
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'cmd_receiver'
-INFO: [Synth 8-5544] ROM "cmd_msg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'usb_interface'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -99,14 +97,14 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                    IDLE |                               01 |                               00
-                   READ1 |                               11 |                               01
+                    IDLE |                               00 |                               00
+                   READ1 |                               01 |                               01
                    READ2 |                               10 |                               10
-                   WRITE |                               00 |                               11
+                   WRITE |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'usb_interface'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4413 ; free virtual = 9133
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5498 ; free virtual = 10244
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -121,21 +119,23 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	               24 Bit    Registers := 1     
+	               40 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   5 Input     24 Bit        Muxes := 1     
-	   2 Input     24 Bit        Muxes := 2     
+	   7 Input     40 Bit        Muxes := 1     
+	   2 Input     40 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 6     
 	   3 Input      8 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 4     
 	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 13    
-	   3 Input      1 Bit        Muxes := 6     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 5     
 	   4 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -146,31 +146,34 @@ Start RTL Hierarchical Component Statistics
 Hierarchical RTL Component report 
 Module usb_interface 
 Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      8 Bit        Muxes := 1     
 	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 3     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
 	   4 Input      1 Bit        Muxes := 1     
 Module cmd_receiver 
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	               24 Bit    Registers := 1     
+	               40 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   5 Input     24 Bit        Muxes := 1     
-	   2 Input     24 Bit        Muxes := 2     
+	   7 Input     40 Bit        Muxes := 1     
+	   2 Input     40 Bit        Muxes := 2     
 	   2 Input      8 Bit        Muxes := 5     
 	   3 Input      8 Bit        Muxes := 1     
-	   2 Input      3 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 2     
-	   2 Input      1 Bit        Muxes := 10    
-	   3 Input      1 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 6     
+	   3 Input      1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -188,8 +191,13 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3917] design usb_interface has port siwu driven by constant 1
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin msg_length[1] with 1st driver pin 'cmd_rx/msg_length0_inferred/out[1]' [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:45]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin msg_length[1] with 2nd driver pin 'VCC' [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:45]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net msg_length[1] is connected to at least one constant driver which has been preserved, other driver is ignored [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:45]
+WARNING: [Synth 8-3332] Sequential element (cmd_rx/FSM_sequential_state_reg[1]) is unused and will be removed from module usb_interface.
+WARNING: [Synth 8-3332] Sequential element (cmd_rx/FSM_sequential_state_reg[0]) is unused and will be removed from module usb_interface.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4400 ; free virtual = 9123
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5486 ; free virtual = 10234
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -201,13 +209,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4277 ; free virtual = 9000
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5363 ; free virtual = 10112
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4277 ; free virtual = 9000
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5363 ; free virtual = 10112
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -219,7 +227,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4276 ; free virtual = 8998
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5362 ; free virtual = 10111
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -243,7 +251,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4276 ; free virtual = 8998
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5362 ; free virtual = 10111
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -256,7 +264,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4276 ; free virtual = 8998
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5362 ; free virtual = 10111
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -268,25 +276,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4276 ; free virtual = 8998
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5362 ; free virtual = 10111
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4276 ; free virtual = 8998
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5362 ; free virtual = 10111
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4276 ; free virtual = 8998
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5362 ; free virtual = 10111
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4276 ; free virtual = 8998
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5362 ; free virtual = 10111
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -303,45 +311,41 @@ Report Cell Usage:
 |      |Cell |Count |
 +------+-----+------+
 |1     |BUFG |     1|
-|2     |LUT1 |     4|
-|3     |LUT2 |    19|
-|4     |LUT3 |     5|
-|5     |LUT4 |     6|
-|6     |LUT5 |     8|
-|7     |LUT6 |    13|
-|8     |FDCE |     7|
-|9     |FDPE |     1|
-|10    |IBUF |    12|
-|11    |OBUF |    18|
+|2     |LUT1 |     1|
+|3     |LUT2 |     4|
+|4     |LUT3 |     1|
+|5     |LUT4 |     1|
+|6     |FDCE |     2|
+|7     |IBUF |     4|
+|8     |OBUF |     5|
 +------+-----+------+
 
 Report Instance Areas: 
-+------+---------+-------------+------+
-|      |Instance |Module       |Cells |
-+------+---------+-------------+------+
-|1     |top      |             |    94|
-|2     |  cmd_rx |cmd_receiver |    51|
-+------+---------+-------------+------+
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    19|
++------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1879.828 ; gain = 332.098 ; free physical = 4276 ; free virtual = 8998
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1866.805 ; gain = 327.066 ; free physical = 5362 ; free virtual = 10111
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1879.828 ; gain = 214.371 ; free physical = 4332 ; free virtual = 9054
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 1879.836 ; gain = 332.098 ; free physical = 4332 ; free virtual = 9054
+Synthesis finished with 0 errors, 3 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1866.805 ; gain = 214.371 ; free physical = 5418 ; free virtual = 10167
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 1866.812 ; gain = 327.066 ; free physical = 5418 ; free virtual = 10167
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1882.797 ; gain = 0.000 ; free physical = 4277 ; free virtual = 9000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1872.742 ; gain = 0.000 ; free physical = 5364 ; free virtual = 10113
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-21 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+20 Infos, 4 Warnings, 3 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 1882.797 ; gain = 422.539 ; free physical = 4375 ; free virtual = 9098
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1882.797 ; gain = 0.000 ; free physical = 4375 ; free virtual = 9098
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:28 . Memory (MB): peak = 1872.742 ; gain = 426.445 ; free physical = 5462 ; free virtual = 10210
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1872.742 ; gain = 0.000 ; free physical = 5462 ; free virtual = 10210
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/usb_interface.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file usb_interface_utilization_synth.rpt -pb usb_interface_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar  2 19:52:06 2020...
+INFO: [Common 17-206] Exiting Vivado at Mon Mar  2 22:46:16 2020...

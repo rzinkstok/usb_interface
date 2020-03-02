@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Mon Mar  2 19:52:48 2020
+| Date         : Mon Mar  2 22:46:51 2020
 | Host         : fpgadev running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_control_sets -verbose -file usb_interface_control_sets_placed.rpt
 | Design       : usb_interface
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     2 |
-|    Minimum number of control sets                        |     2 |
+| Total control sets                                       |     1 |
+|    Minimum number of control sets                        |     1 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |     8 |
+| Unused register locations in slices containing registers |     6 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,10 +39,10 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     2 |
+| Total control sets |     1 |
 | >= 0 to < 4        |     1 |
 | >= 4 to < 6        |     0 |
-| >= 6 to < 8        |     1 |
+| >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
@@ -59,10 +59,10 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |               0 |            0 |
-| No           | No                    | Yes                    |               7 |            5 |
+| No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |               1 |            1 |
+| Yes          | No                    | Yes                    |               2 |            1 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,11 +70,10 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------+-------------------------+------------------+------------------+----------------+
-|      Clock Signal     |      Enable Signal      | Set/Reset Signal | Slice Load Count | Bel Load Count |
-+-----------------------+-------------------------+------------------+------------------+----------------+
-|  dbg_clkout_OBUF_BUFG | cmd_rx/cmd_valid_q0_out | cmd_rx/rst_n     |                1 |              1 |
-|  dbg_clkout_OBUF_BUFG |                         | cmd_rx/rst_n     |                5 |              7 |
-+-----------------------+-------------------------+------------------+------------------+----------------+
++-----------------------+---------------+---------------------------------+------------------+----------------+
+|      Clock Signal     | Enable Signal |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
++-----------------------+---------------+---------------------------------+------------------+----------------+
+|  dbg_clkout_OBUF_BUFG | next_state    | FSM_sequential_state[1]_i_3_n_0 |                1 |              2 |
++-----------------------+---------------+---------------------------------+------------------+----------------+
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1581858417">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1583175082">
   <File Type="VDS-TIMINGSUMMARY" Name="usb_interface_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="usb_interface.dcp"/>
   <File Type="RDS-UTIL-PB" Name="usb_interface_utilization_synth.pb"/>

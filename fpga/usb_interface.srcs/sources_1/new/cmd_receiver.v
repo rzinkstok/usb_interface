@@ -13,7 +13,8 @@ module cmd_receiver(
     output reg cmd_valid,
     output wire state_idle,
     output wire state_active,
-    output wire state_escaped
+    output wire state_escaped,
+    output reg [2:0] write_index
 );
     
     /*******************************************************************************.
@@ -39,9 +40,11 @@ module cmd_receiver(
     // associated validity flag
     reg data_valid;
     reg [7:0] data_q;
-
+    
+    reg cmd_valid_q;
+    
     // Current byte index into the command being processed
-    reg [2:0] write_index;
+    //reg [2:0] write_index;
     reg [2:0] write_index_q;
     
     // Expected message length based on the first byte (write commands will have
@@ -57,9 +60,12 @@ module cmd_receiver(
             state <= IDLE;
             write_index <= 1'b0;
             cmd_msg <= 24'b0;
+            cmd_valid <= 1'b0;
+            //cmd_valid_q <= 1'b0;
         end else begin
             state <= next_state;
             write_index <= write_index_q;
+            cmd_valid <= cmd_valid_q;
             
             if (state == IDLE) begin
                 cmd_msg <= 24'b0; // removed for debugging
@@ -76,6 +82,7 @@ module cmd_receiver(
     always @(*) begin
         next_state = state;
         write_index_q = write_index;
+        cmd_valid_q = cmd_valid;
         data_q = 8'b0;
         data_valid = 1'b0;
         //cmd_valid = 1'b0; // removed for debugging
@@ -87,6 +94,7 @@ module cmd_receiver(
                     if (data == `SLIP_END) begin
                         next_state = ACTIVE;
                         write_index_q = 3'd0;
+                        cmd_valid_q = 1'b0;
                     end
                 end
         
@@ -94,18 +102,18 @@ module cmd_receiver(
                     if (data == `SLIP_END) begin
                         // We got an END. If we're still at index 0 (i.e., repeated
                         // END), ignore it.
-                        //next_state = IDLE;
                         if (write_index != 3'd0) begin
                             next_state = IDLE;  
                             if (write_index == msg_length) begin
+                                cmd_valid_q = 1'b1;
                                 write_index_q = 3'd6;
-                                cmd_valid = 1'b1;
                             end else begin
-                                cmd_valid = 1'b0;
+                                write_index_q = 3'd5;
+                            //    cmd_valid = 1'b0;
                             end
                         end
                     end else if (write_index < msg_length) begin
-                        cmd_valid = 1'b0; // Added for debugging
+                        //cmd_valid = 1'b0; // Added for debugging
                         // We've gotten some other byte, and still have room left for
                         // it in the current message. Check to see if it's an ESCAPE.
                         if (data == `SLIP_ESC) begin

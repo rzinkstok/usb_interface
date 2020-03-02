@@ -18,11 +18,16 @@ module usb_interface(
     output wire dbg_clkout,
     output wire rxf,
     output wire txe,
-    //output wire [23:0]cmd_in,
+    output wire usb_state_idle,
+    output wire usb_state_read1,
+    output wire usb_state_read2,
+    output wire usb_state_write,
+    
     output wire rx_state_idle,
     output wire rx_state_active,
     output wire rx_state_escaped,
-    output wire cmd_valid
+    output wire cmd_valid,
+    output wire [2:0] write_index
 );
     assign dbg_clkout = clkout;
     assign rxf = ~rxf_n;
@@ -52,6 +57,11 @@ module usb_interface(
     wire [7:0] rxf_data;
     assign rxf_data = rxf_n ? 8'bZ : data;
     
+    assign usb_state_idle = (state == IDLE);
+    assign usb_state_read1 = (state == READ1);
+    assign usb_state_read2 = (state == READ2);
+    assign usb_state_write = (state == WRITE);
+    
     /*******************************************************************************.
     * Command Receiver                                                              *
     '*******************************************************************************/
@@ -72,7 +82,8 @@ module usb_interface(
         .cmd_valid(cmd_valid),
         .state_idle(rx_state_idle),
         .state_active(rx_state_active),
-        .state_escaped(rx_state_escaped)
+        .state_escaped(rx_state_escaped),
+        .write_index(write_index)
     );
 
     

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date             : Sun Feb 16 14:08:44 2020
+| Date             : Mon Mar  2 19:53:17 2020
 | Host             : fpgadev running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file usb_interface_power_routed.rpt -pb usb_interface_power_summary_routed.pb -rpx usb_interface_power_routed.rpx
 | Design           : usb_interface
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 10.871 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 15.272 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 9.830                            |
+| Dynamic (W)              | 14.232                           |
 | Device Static (W)        | 1.041                            |
 | Effective TJA (C/W)      | 11.5                             |
 | Max Ambient (C)          | 0.0                              |
@@ -52,15 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.150 |       56 |       --- |             --- |
-|   LUT as Logic |     0.141 |       29 |     53200 |            0.05 |
+| Slice Logic    |     0.170 |       66 |       --- |             --- |
+|   LUT as Logic |     0.161 |       37 |     53200 |            0.07 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Register     |     0.004 |        8 |    106400 |           <0.01 |
-|   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     0.159 |       58 |       --- |             --- |
-| I/O            |     9.521 |       23 |       200 |           11.50 |
+|   Register     |     0.003 |        8 |    106400 |           <0.01 |
+|   Others       |     0.000 |        2 |       --- |             --- |
+| Signals        |     0.285 |       70 |       --- |             --- |
+| I/O            |    13.776 |       30 |       200 |           15.00 |
 | Static Power   |     1.041 |          |           |                 |
-| Total          |    10.871 |          |           |                 |
+| Total          |    15.272 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,9 +70,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.652 |       0.353 |      0.299 |
-| Vccaux    |       1.800 |     0.240 |       0.140 |      0.100 |
-| Vcco33    |       3.300 |     2.797 |       2.796 |      0.001 |
+| Vccint    |       1.000 |     0.798 |       0.499 |      0.299 |
+| Vccaux    |       1.800 |     0.302 |       0.202 |      0.100 |
+| Vcco33    |       3.300 |     4.052 |       4.051 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -144,8 +144,8 @@ Table of Contents
 +---------------+-----------+
 | Name          | Power (W) |
 +---------------+-----------+
-| usb_interface |     9.830 |
-|   cmd_rx      |     0.159 |
+| usb_interface |    14.232 |
+|   cmd_rx      |     0.294 |
 +---------------+-----------+
 
 

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Sun Feb 16 14:08:41 2020
+| Date         : Mon Mar  2 19:53:14 2020
 | Host         : fpgadev running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_drc -file usb_interface_drc_routed.rpt -pb usb_interface_drc_routed.pb -rpx usb_interface_drc_routed.rpx
 | Design       : usb_interface
@@ -24,22 +24,16 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 10
-+----------+----------+---------------------------------+------------+
-| Rule     | Severity | Description                     | Violations |
-+----------+----------+---------------------------------+------------+
-| PDRC-153 | Warning  | Gated clock check               | 1          |
-| RPBF-3   | Warning  | IO port buffering is incomplete | 8          |
-| ZPS7-1   | Warning  | PS7 block required              | 1          |
-+----------+----------+---------------------------------+------------+
+             Violations found: 9
++--------+----------+---------------------------------+------------+
+| Rule   | Severity | Description                     | Violations |
++--------+----------+---------------------------------+------------+
+| RPBF-3 | Warning  | IO port buffering is incomplete | 8          |
+| ZPS7-1 | Warning  | PS7 block required              | 1          |
++--------+----------+---------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-PDRC-153#1 Warning
-Gated clock check  
-Net cmd_rx/cmd_valid0_out is a gated clock net sourced by a combinational pin cmd_rx/cmd_valid_reg_i_2/O, cell cmd_rx/cmd_valid_reg_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
 RPBF-3#1 Warning
 IO port buffering is incomplete  
 Device port data[0] expects both input and output buffering but the buffers are incomplete.

@@ -44,6 +44,14 @@ def write_bytes(dev, b, y=False):
         input()
 
 
+def write_bytes_slow(dev, b):
+    m = slip(bytes(b))
+    for bb in m:
+        print(bb)
+        dev.write(bb)
+        input()
+
+
 with Device() as dev:
     dev.ftdi_fn.ftdi_set_bitmode(0xFF, 0x00)
     time.sleep(0.01)
@@ -53,22 +61,34 @@ with Device() as dev:
     dev.ftdi_fn.ftdi_setflowctrl(0)
     dev.ftdi_fn.ftdi_usb_purge_buffers()
 
-    if False:
+    if True:
         while True:
-            i = random.randint(0, 255)
-            print(i)
-            write_bytes(dev, i, y=True)
+            i1 = random.randint(0, 255)
+            i2 = random.randint(0, 255)
+            i3 = random.randint(0, 255)
+
+            print(i1, i2, i3)
+            write_bytes(dev, [i1, i2, i3], y=True)
     else:
+        slow = False
         while True:
-            write_bytes(dev, [254, 253, 252])
-            write_bytes(dev, [192, 219, 255])  # Escape END
-            write_bytes(dev, [254, 13, 15])
-            write_bytes(dev, [15, 219, 34])  # Escape ESC
-            write_bytes(dev, [254, 1, 1])
-            write_bytes(dev, [192, 1, 2, 3])
-            write_bytes(dev, [254, 2, 2])
-            write_bytes(dev, [2, 219])
-            write_bytes(dev, [2, 2, 219])
-            write_bytes(dev, [254])
-            write_bytes(dev, [254])
-            write_bytes(dev, [1, 2, 192])
+            if slow:
+                write_bytes_slow(dev, [254, 253, 252])
+                write_bytes_slow(dev, [192, 219, 255])  # Escape END
+                write_bytes_slow(dev, [254, 13, 15])
+                write_bytes_slow(dev, [15, 219, 34])  # Escape ESC
+                write_bytes_slow(dev, [254, 1, 1])
+                continue
+            else:
+                write_bytes(dev, [254, 253, 252])
+                write_bytes(dev, [192, 219, 255])  # Escape END
+                write_bytes(dev, [254, 13, 15])
+                write_bytes(dev, [15, 219, 34])  # Escape ESC
+                write_bytes(dev, [254, 1, 1])
+                write_bytes(dev, [192, 1, 2, 3])
+                write_bytes(dev, [254, 2, 2])
+                write_bytes(dev, [2, 219])
+                write_bytes(dev, [2, 2, 219])
+                write_bytes(dev, [254])
+                write_bytes(dev, [254])
+                write_bytes(dev, [1, 2, 192])

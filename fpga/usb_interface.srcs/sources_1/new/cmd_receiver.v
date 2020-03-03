@@ -41,7 +41,6 @@ module cmd_receiver(
     // Expected message length based on the first byte (write commands will have
     // the MSB of the first byte set)
     wire [2:0] msg_length;
-    assign msg_length = 3'd3;
     assign msg_length = (cmd_msg[39]) ? `MSG_WRITE_LENGTH : `MSG_READ_LENGTH;
     
     /*******************************************************************************.

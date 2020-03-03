@@ -2,6 +2,7 @@
 `default_nettype none
 
 module usb_interface(
+    input wire clk,
     input wire rst_n,
     
     // FT2232H signals
@@ -14,10 +15,15 @@ module usb_interface(
     output wire oe_n,       // Output enable, should be low before driving rd_n low
     output wire siwu,       // Not used
     
+    // Incoming command outputs
+    output wire [39:0] cmd,
+    output wire cmd_ready,
+    input wire cmd_read_en
+    
     // Output
-    output wire dbg_clkout
+    //output wire dbg_clkout
 );
-    assign dbg_clkout = clkout;
+    //assign dbg_clkout = clkout;
     
     /*******************************************************************************.
     * FSM States                                                                    *
@@ -39,13 +45,15 @@ module usb_interface(
     assign oe_n = ~((state == READ1) | (state == READ2));
     assign rd_n = (state != READ2);
     
-    // Prevent data from showing up after rxf_n has gone high
-    wire [7:0] rxf_data;
-    assign rxf_data = rxf_n ? 8'bZ : data;
+    
     
     /*******************************************************************************.
     * Command Receiver                                                              *
     '*******************************************************************************/
+    // Prevent data from showing up after rxf_n has gone high
+    wire [7:0] rx_data_in;
+    assign rx_data_in = rxf_n ? 8'bZ : data;
+    
     // As long as we are in READ2, new RX data is available from the chip
     // As READ2 lasts 1 cycle longer than needed, add the rxf_n dependency.
     wire rx_data_ready;
@@ -54,14 +62,38 @@ module usb_interface(
     wire [39:0] cmd_in;
     wire cmd_valid;
     
+    // Command FIFO state flags 
+    wire cmd_fifo_full;
+    wire cmd_fifo_empty;
+    
+    // Command readiness flag for the user of this interface. This is also
+    // predicated on the read message FIFO not being full, since accepting
+    // a command could potentially trigger generation of a new read response
+    // message before that queue can be emptied.
+    //wire read_fifo_full;
+    assign cmd_ready = (!cmd_fifo_empty); // && (!read_fifo_full);
+
     // Command receiver
     cmd_receiver cmd_rx(
         .clk(clkout),
         .rst_n(rst_n),
-        .data(rxf_data),
+        .data(rx_data_in),
         .data_ready(rx_data_ready),
         .cmd_valid(cmd_valid),
         .cmd_msg(cmd_in)
+    );
+    
+    // Queue of completed incoming commands
+    cmd_fifo cmd_queue(
+        .rst(!rst_n),
+        .wr_clk(clkout),
+        .rd_clk(clk),
+        .din(cmd_in),
+        .wr_en(cmd_valid),
+        .rd_en(cmd_read_en),
+        .dout(cmd),
+        .full(cmd_fifo_full), 
+        .empty(cmd_fifo_empty)
     );
 
     /*******************************************************************************.

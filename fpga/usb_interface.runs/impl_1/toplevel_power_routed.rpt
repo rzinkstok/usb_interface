@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date             : Thu Mar  5 20:16:12 2020
-| Host             : fpgadev running 64-bit Ubuntu 18.04.4 LTS
+| Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date             : Fri Mar  6 09:24:50 2020
+| Host             : NLVL42YXNF2 running 64-bit major release  (build 9200)
 | Command          : report_power -file toplevel_power_routed.rpt -pb toplevel_power_summary_routed.pb -rpx toplevel_power_routed.rpx
 | Design           : toplevel
 | Device           : xc7z020clg484-1
@@ -36,8 +36,8 @@ Table of Contents
 | Dynamic (W)              | 0.011        |
 | Device Static (W)        | 0.106        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 83.6         |
-| Junction Temperature (C) | 26.4         |
+| Max Ambient (C)          | 83.7         |
+| Junction Temperature (C) | 26.3         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
 | Clocks                  |     0.002 |        4 |       --- |             --- |
-| Slice Logic             |    <0.001 |      500 |       --- |             --- |
-|   LUT as Logic          |    <0.001 |      149 |     53200 |            0.28 |
+| Slice Logic             |    <0.001 |      501 |       --- |             --- |
+|   LUT as Logic          |    <0.001 |      150 |     53200 |            0.28 |
 |   Register              |    <0.001 |      249 |    106400 |            0.23 |
 |   CARRY4                |    <0.001 |       16 |     13300 |            0.12 |
 |   Others                |     0.000 |       51 |       --- |             --- |
 |   LUT as Shift Register |     0.000 |        2 |     17400 |            0.01 |
-| Signals                 |    <0.001 |      363 |       --- |             --- |
+| Signals                 |    <0.001 |      364 |       --- |             --- |
 | Block RAM               |    <0.001 |        2 |       140 |            1.43 |
-| I/O                     |     0.008 |       27 |       200 |           13.50 |
+| I/O                     |     0.007 |       27 |       200 |           13.50 |
 | Static Power            |     0.106 |          |           |                 |
 | Total                   |     0.117 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+

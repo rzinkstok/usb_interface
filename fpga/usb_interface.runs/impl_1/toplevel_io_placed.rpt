@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
-| Tool Version              : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date                      : Thu Mar  5 20:15:44 2020
-| Host                      : fpgadev running 64-bit Ubuntu 18.04.4 LTS
+| Tool Version              : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date                      : Fri Mar  6 09:24:26 2020
+| Host                      : NLVL42YXNF2 running 64-bit major release  (build 9200)
 | Command                   : report_io -file toplevel_io_placed.rpt
 | Design                    : toplevel
 | Device                    : xc7z020
@@ -450,7 +450,7 @@ Table of Contents
 | U17        |                   | High Range | IO_L16P_T2_33           | User IO     |             |      33 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | U18        |                   | High Range | VCCO_33                 | VCCO        |             |      33 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | U19        |                   | High Range | IO_0_33                 | User IO     |             |      33 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
-| U20        | oe_n              | High Range | IO_L5P_T0_33            | OUTPUT      | LVCMOS33    |      33 |          4 | SLOW |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| U20        | oe_n              | High Range | IO_L5P_T0_33            | OUTPUT      | LVCMOS33    |      33 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U21        | data[3]           | High Range | IO_L1N_T0_33            | BIDIR       | LVCMOS33    |      33 |          8 | SLOW |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | U22        | data[2]           | High Range | IO_L2N_T0_33            | BIDIR       | LVCMOS33    |      33 |          8 | SLOW |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | V1         |                   |            | VCCO_DDR_502            | VCCO        |             |         |            |      |                     |                      |   any** |            |           |          |      |                  |              |                   |              |

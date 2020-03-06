@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
-| Date         : Thu Mar  5 20:15:44 2020
-| Host         : fpgadev running 64-bit Ubuntu 18.04.4 LTS
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Fri Mar  6 09:24:26 2020
+| Host         : NLVL42YXNF2 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file toplevel_control_sets_placed.rpt
 | Design       : toplevel
 | Device       : xc7z020
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    18 |
-|    Minimum number of control sets                        |    18 |
+| Total control sets                                       |    19 |
+|    Minimum number of control sets                        |    19 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    87 |
+| Unused register locations in slices containing registers |    95 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,9 +39,9 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    18 |
-| >= 0 to < 4        |     9 |
-| >= 4 to < 6        |     1 |
+| Total control sets |    19 |
+| >= 0 to < 4        |    11 |
+| >= 4 to < 6        |     0 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     3 |
 | >= 10 to < 12      |     0 |
@@ -59,11 +59,11 @@ Table of Contents
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |             131 |           33 |
-| No           | No                    | Yes                    |               4 |            2 |
+| No           | No                    | Yes                    |               3 |            2 |
 | No           | Yes                   | No                     |              12 |            6 |
-| Yes          | No                    | No                     |              16 |            9 |
-| Yes          | No                    | Yes                    |              13 |           10 |
-| Yes          | Yes                   | No                     |              73 |           16 |
+| Yes          | No                    | No                     |              16 |            8 |
+| Yes          | No                    | Yes                    |              14 |            8 |
+| Yes          | Yes                   | No                     |              73 |           15 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,24 +73,25 @@ Table of Contents
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
 |    Clock Signal   |                                                                  Enable Signal                                                                  |                                                      Set/Reset Signal                                                      | Slice Load Count | Bel Load Count |
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
-|  clk_IBUF_BUFG    | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_out_bin_ff_reg[0]_CE_cooolgate_en_sig_8   |                                                                                                                            |                1 |              1 |
-|  clk_IBUF_BUFG    | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_CE_cooolgate_en_sig_14 |                                                                                                                            |                1 |              1 |
-|  clkout_IBUF_BUFG | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.wr_rst_busy_i_reg_CE_cooolgate_en_sig_11  |                                                                                                                            |                1 |              1 |
-|  clkout_IBUF_BUFG | usbif/cmd_rx/write_index_reg[2]_CE_cooolgate_en_sig_9                                                                                           | usbif/cmd_rx/rst                                                                                                           |                1 |              1 |
-|  clkout_IBUF_BUFG | usbif/cmd_rx/cmd_msg_reg[31]_CE_cooolgate_en_sig_5                                                                                              | usbif/cmd_rx/rst                                                                                                           |                1 |              1 |
 |  clkout_IBUF_BUFG | usbif/cmd_rx/write_index_reg[0]_CE_cooolgate_en_sig_13                                                                                          | usbif/cmd_rx/rst                                                                                                           |                1 |              1 |
 |  clkout_IBUF_BUFG | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_wr_rst_ic_reg_CE_cooolgate_en_sig_12 |                                                                                                                            |                1 |              1 |
+|  clkout_IBUF_BUFG | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.wr_rst_busy_i_reg_CE_cooolgate_en_sig_11  |                                                                                                                            |                1 |              1 |
+|  clkout_IBUF_BUFG | usbif/cmd_rx/cmd_msg_reg[31]_CE_cooolgate_en_sig_5                                                                                              | usbif/cmd_rx/rst                                                                                                           |                1 |              1 |
+|  clkout_IBUF_BUFG | usbif/cmd_rx/write_index_reg[2]_CE_cooolgate_en_sig_9                                                                                           | usbif/cmd_rx/rst                                                                                                           |                1 |              1 |
+|  clkout_IBUF_BUFG | usbif/cmd_rx/write_index_reg[1]_CE_cooolgate_en_sig_10                                                                                          | usbif/cmd_rx/rst                                                                                                           |                1 |              1 |
+|  clk_IBUF_BUFG    | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_rd_rst_ic_reg_CE_cooolgate_en_sig_14 |                                                                                                                            |                1 |              1 |
+|  clk_IBUF_BUFG    | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/wr_pntr_cdc_inst/dest_out_bin_ff_reg[0]_CE_cooolgate_en_sig_8   |                                                                                                                            |                1 |              1 |
 |  clkout_IBUF_BUFG | usbif/cmd_rx/FSM_sequential_state_reg[0]_CE_cooolgate_en_sig_7                                                                                  | usbif/cmd_rx/rst                                                                                                           |                1 |              2 |
+|  clkout_IBUF_BUFG |                                                                                                                                                 | usbif/cmd_rx/rst                                                                                                           |                2 |              3 |
 |  clkout_IBUF_BUFG |                                                                                                                                                 | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_wr_rst_ic_reg_0 |                2 |              3 |
-|  clkout_IBUF_BUFG |                                                                                                                                                 | usbif/cmd_rx/rst                                                                                                           |                2 |              4 |
-|  clkout_IBUF_BUFG | usbif/cmd_rx/cmd_msg_reg[32]_CE_cooolgate_en_sig_6                                                                                              | usbif/cmd_rx/rst                                                                                                           |                6 |              8 |
+|  clkout_IBUF_BUFG | usbif/cmd_rx/cmd_msg_reg[32]_CE_cooolgate_en_sig_6                                                                                              | usbif/cmd_rx/rst                                                                                                           |                3 |              8 |
 |  clk_IBUF_BUFG    | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/E[0]                                            | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/SR[0]                                                          |                1 |              8 |
 |  clk_IBUF_BUFG    |                                                                                                                                                 | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/SR[0]                                                          |                4 |              9 |
-|  clkout_IBUF_BUFG | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_out_bin_ff_reg[0]_CE_cooolgate_en_sig_3   |                                                                                                                            |                5 |             12 |
-|  clk_IBUF_BUFG    | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/ram_empty_fb_i_reg                              | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/SR[0]                                                          |                8 |             26 |
-|  clkout_IBUF_BUFG | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/p_20_out                                                | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_wr_rst_ic_reg_0 |                7 |             39 |
-|  clkout_IBUF_BUFG |                                                                                                                                                 |                                                                                                                            |               13 |             62 |
-|  clk_IBUF_BUFG    |                                                                                                                                                 |                                                                                                                            |               20 |             71 |
+|  clkout_IBUF_BUFG | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gcx.clkx/rd_pntr_cdc_inst/dest_out_bin_ff_reg[0]_CE_cooolgate_en_sig_3   |                                                                                                                            |                4 |             12 |
+|  clk_IBUF_BUFG    | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/ram_empty_fb_i_reg                              | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/SR[0]                                                          |                6 |             26 |
+|  clkout_IBUF_BUFG | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/p_20_out                                                | usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gsckt_wrst.gic_rst.sckt_wr_rst_ic_reg_0 |                8 |             39 |
+|  clkout_IBUF_BUFG |                                                                                                                                                 |                                                                                                                            |               15 |             62 |
+|  clk_IBUF_BUFG    |                                                                                                                                                 |                                                                                                                            |               18 |             71 |
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+------------------+----------------+
 
 

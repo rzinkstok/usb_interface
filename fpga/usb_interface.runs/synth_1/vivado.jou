@@ -1,12 +1,12 @@
 #-----------------------------------------------------------
 # Vivado v2019.1 (64-bit)
-# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Mar  5 20:14:01 2020
-# Process ID: 28872
-# Current directory: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1
-# Command line: vivado -log toplevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source toplevel.tcl
-# Log file: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/toplevel.vds
-# Journal file: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/vivado.jou
+# Start of session at: Fri Mar  6 09:23:13 2020
+# Process ID: 11876
+# Current directory: C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1
+# Command line: vivado.exe -log toplevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source toplevel.tcl
+# Log file: C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/toplevel.vds
+# Journal file: C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source toplevel.tcl -notrace

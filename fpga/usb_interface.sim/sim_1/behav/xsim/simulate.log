@@ -1,4 +1,5 @@
 Vivado Simulator 2019.1
 Time resolution is 1 ps
+WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information.
                    0<< Starting simulation >>
-$finish called at time : 3950075 ps : File "/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sim_1/new/usb_interface_tb.v" Line 161
+$finish called at time : 4083411 ps : File "/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sim_1/new/toplevel_tb.v" Line 163

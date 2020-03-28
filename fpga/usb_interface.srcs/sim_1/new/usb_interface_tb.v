@@ -30,8 +30,7 @@ module usb_interface_tb();
         .rd_n(rd_n),
         .wr_n(wr_n),
         .oe_n(oe_n),
-        .siwu(siwu),
-        .dbg_clkout(dbg_clkout)
+        .siwu(siwu)
     );
     
     initial begin

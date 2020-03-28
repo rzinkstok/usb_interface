@@ -5,7 +5,7 @@ import time
 from pylibftdi import Device, USB_PID_LIST, USB_VID_LIST
 from ctypes import *
 
-RANDOM = True
+RANDOM = False
 INPUT = True
 
 STYX_VID = 0x2a19
@@ -66,15 +66,8 @@ with Device() as dev:
                 i1 = 0
     else:
         while True:
-            write_bytes(dev, [254, 253, 252])
-            write_bytes(dev, [192, 219, 255])  # Escape END
-            write_bytes(dev, [254, 13, 15])
-            write_bytes(dev, [15, 219, 34])  # Escape ESC
-            write_bytes(dev, [254, 1, 1])
-            write_bytes(dev, [192, 1, 2, 3])
-            write_bytes(dev, [254, 2, 2])
-            write_bytes(dev, [2, 219])
-            write_bytes(dev, [2, 2, 219])
-            write_bytes(dev, [254])
-            write_bytes(dev, [254])
-            write_bytes(dev, [1, 2, 192])
+            write_bytes(dev, [160, 0, 64, 0, 1])
+            write_bytes(dev, [160, 0, 64, 0, 0])
+            write_bytes(dev, [160, 0, 4, 0, 1])
+            write_bytes(dev, [160, 0, 4, 0, 0])
+

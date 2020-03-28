@@ -1,6 +1,6 @@
 Vivado Simulator 2019.1
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: /tools/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto fb59eb25ef0e4f54847876d2cca6a036 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot usb_interface_tb_behav xil_defaultlib.usb_interface_tb xil_defaultlib.glbl -log elaborate.log 
+Running: /tools/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto fb59eb25ef0e4f54847876d2cca6a036 --incr --debug typical --relax --mt 8 -L fifo_generator_v13_2_4 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot toplevel_tb_behav xil_defaultlib.toplevel_tb xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -8,7 +8,16 @@ Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.cmd_receiver
+Compiling module fifo_generator_v13_2_4.fifo_generator_v13_2_4_sync_stag...
+Compiling module fifo_generator_v13_2_4.fifo_generator_v13_2_4_bhv_ver_a...
+Compiling module fifo_generator_v13_2_4.fifo_generator_v13_2_4_bhv_ver_p...
+Compiling module fifo_generator_v13_2_4.fifo_generator_v13_2_4_CONV_VER(...
+Compiling module fifo_generator_v13_2_4.fifo_generator_vlog_beh(C_DATA_C...
+Compiling module xil_defaultlib.cmd_fifo
 Compiling module xil_defaultlib.usb_interface
-Compiling module xil_defaultlib.usb_interface_tb
+Compiling module xil_defaultlib.cmd_controller
+Compiling module xil_defaultlib.control_regs
+Compiling module xil_defaultlib.toplevel
+Compiling module xil_defaultlib.toplevel_tb
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot usb_interface_tb_behav
+Built simulation snapshot toplevel_tb_behav

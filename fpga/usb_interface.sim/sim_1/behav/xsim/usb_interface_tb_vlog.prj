@@ -1,5 +1,6 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  --include "../../../../usb_interface.srcs/sources_1/new" \
+"../../../../usb_interface.srcs/sources_1/ip/cmd_fifo/sim/cmd_fifo.v" \
 "../../../../usb_interface.srcs/sources_1/new/cmd_receiver.v" \
 "../../../../usb_interface.srcs/sources_1/new/usb_interface.v" \
 "../../../../usb_interface.srcs/sim_1/new/usb_interface_tb.v" \

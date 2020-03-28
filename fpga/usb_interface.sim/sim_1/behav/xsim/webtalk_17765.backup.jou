@@ -2,11 +2,11 @@
 # Webtalk v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sat Feb 15 13:17:54 2020
-# Process ID: 18463
+# Start of session at: Sat Mar 28 17:22:40 2020
+# Process ID: 17765
 # Current directory: /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/behav/xsim
-# Command line: wbtcv -mode batch -source /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/behav/xsim/xsim.dir/usb_interface_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Command line: wbtcv -mode batch -source /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/behav/xsim/xsim.dir/toplevel_tb_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/behav/xsim/webtalk.jou
 #-----------------------------------------------------------
-source /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/behav/xsim/xsim.dir/usb_interface_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+source /home/rzinkstok/usb_interface/fpga/usb_interface.sim/sim_1/behav/xsim/xsim.dir/toplevel_tb_behav/webtalk/xsim_webtalk.tcl -notrace

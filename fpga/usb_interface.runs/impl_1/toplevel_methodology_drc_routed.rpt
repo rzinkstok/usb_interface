@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Fri Mar  6 09:24:50 2020
-| Host         : NLVL42YXNF2 running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date         : Sat Mar 28 18:32:01 2020
+| Host         : fpgadev running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_methodology -file toplevel_methodology_drc_routed.rpt -pb toplevel_methodology_drc_routed.pb -rpx toplevel_methodology_drc_routed.rpx
 | Design       : toplevel
 | Device       : xc7z020clg484-1
@@ -23,143 +23,103 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 26
+             Violations found: 18
 +-----------+----------+-------------------------------------------------+------------+
 | Rule      | Severity | Description                                     | Violations |
 +-----------+----------+-------------------------------------------------+------------+
 | LUTAR-1   | Warning  | LUT drives async reset alert                    | 1          |
 | PDRC-190  | Warning  | Suboptimally placed synchronized register chain | 1          |
-| TIMING-18 | Warning  | Missing input or output delay                   | 24         |
+| TIMING-18 | Warning  | Missing input or output delay                   | 16         |
 +-----------+----------+-------------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell usbif/cmd_rx/FSM_sequential_state[1]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) usbif/FSM_sequential_state_reg[0]/CLR, usbif/FSM_sequential_state_reg[1]/CLR, usbif/cmd_rx/FSM_sequential_state_reg[0]/CLR, usbif/cmd_rx/FSM_sequential_state_reg[1]/CLR, usbif/cmd_rx/cmd_msg_reg[31]/CLR, usbif/cmd_rx/cmd_msg_reg[32]/CLR, usbif/cmd_rx/cmd_msg_reg[33]/CLR, usbif/cmd_rx/cmd_msg_reg[34]/CLR, usbif/cmd_rx/cmd_msg_reg[35]/CLR, usbif/cmd_rx/cmd_msg_reg[36]/CLR, usbif/cmd_rx/cmd_msg_reg[37]/CLR, usbif/cmd_rx/cmd_msg_reg[38]/CLR, usbif/cmd_rx/cmd_msg_reg[39]/CLR, usbif/cmd_rx/cmd_valid_reg/CLR, usbif/cmd_rx/write_index_reg[0]/CLR (the first 15 of 17 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell usbif/cmd_rx/FSM_sequential_state[1]_i_3, with 2 or more inputs, drives asynchronous preset/clear pin(s) cmd_ctrl/FSM_sequential_state_reg[0]/CLR, cmd_ctrl/FSM_sequential_state_reg[1]/CLR, cmd_ctrl/FSM_sequential_state_reg[2]/CLR, cmd_ctrl/FSM_sequential_state_reg[3]/CLR, cmd_ctrl/active_cmd_reg[0]/CLR, cmd_ctrl/active_cmd_reg[16]/CLR, cmd_ctrl/active_cmd_reg[17]/CLR, cmd_ctrl/active_cmd_reg[18]/CLR, cmd_ctrl/active_cmd_reg[19]/CLR, cmd_ctrl/active_cmd_reg[20]/CLR, cmd_ctrl/active_cmd_reg[21]/CLR, cmd_ctrl/active_cmd_reg[22]/CLR, cmd_ctrl/active_cmd_reg[23]/CLR, cmd_ctrl/active_cmd_reg[24]/CLR, cmd_ctrl/active_cmd_reg[25]/CLR (the first 15 of 64 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 PDRC-190#1 Warning
 Suboptimally placed synchronized register chain  
-The FDRE cell usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X113Y35 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
+The FDRE cell usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d2_reg in site SLICE_X105Y27 is part of a synchronized register chain that is suboptimally placed as the load FDSE cell usbif/cmd_queue/U0/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/grstd1.grst_full.grst_f.rst_d3_reg is not placed in the same (SLICE) site.
 Related violations: <none>
 
 TIMING-18#1 Warning
 Missing input or output delay  
-An input delay is missing on cmd_read_en relative to clock(s) clk
+An input delay is missing on data[0] relative to clock(s) clkout
 Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An input delay is missing on data[0] relative to clock(s) clkout
+An input delay is missing on data[1] relative to clock(s) clkout
 Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An input delay is missing on data[1] relative to clock(s) clkout
+An input delay is missing on data[2] relative to clock(s) clkout
 Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An input delay is missing on data[2] relative to clock(s) clkout
+An input delay is missing on data[3] relative to clock(s) clkout
 Related violations: <none>
 
 TIMING-18#5 Warning
 Missing input or output delay  
-An input delay is missing on data[3] relative to clock(s) clkout
+An input delay is missing on data[4] relative to clock(s) clkout
 Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
-An input delay is missing on data[4] relative to clock(s) clkout
+An input delay is missing on data[5] relative to clock(s) clkout
 Related violations: <none>
 
 TIMING-18#7 Warning
 Missing input or output delay  
-An input delay is missing on data[5] relative to clock(s) clkout
+An input delay is missing on data[6] relative to clock(s) clkout
 Related violations: <none>
 
 TIMING-18#8 Warning
 Missing input or output delay  
-An input delay is missing on data[6] relative to clock(s) clkout
+An input delay is missing on data[7] relative to clock(s) clkout
 Related violations: <none>
 
 TIMING-18#9 Warning
 Missing input or output delay  
-An input delay is missing on data[7] relative to clock(s) clkout
+An input delay is missing on rst_n relative to clock(s) clk, clkout
 Related violations: <none>
 
 TIMING-18#10 Warning
 Missing input or output delay  
-An input delay is missing on rst_n relative to clock(s) clk, clkout
+An input delay is missing on rxf_n relative to clock(s) clkout
 Related violations: <none>
 
 TIMING-18#11 Warning
 Missing input or output delay  
-An input delay is missing on rxf_n relative to clock(s) clkout
+An input delay is missing on txe_n relative to clock(s) clkout
 Related violations: <none>
 
 TIMING-18#12 Warning
 Missing input or output delay  
-An input delay is missing on txe_n relative to clock(s) clkout
+An output delay is missing on mnhrpt relative to clock(s) clk
 Related violations: <none>
 
 TIMING-18#13 Warning
 Missing input or output delay  
-An output delay is missing on cmd_byte_debug[0] relative to clock(s) clk
+An output delay is missing on nhalga relative to clock(s) clk
 Related violations: <none>
 
 TIMING-18#14 Warning
 Missing input or output delay  
-An output delay is missing on cmd_byte_debug[1] relative to clock(s) clk
+An output delay is missing on oe_n relative to clock(s) clkout
 Related violations: <none>
 
 TIMING-18#15 Warning
 Missing input or output delay  
-An output delay is missing on cmd_byte_debug[2] relative to clock(s) clk
-Related violations: <none>
-
-TIMING-18#16 Warning
-Missing input or output delay  
-An output delay is missing on cmd_byte_debug[3] relative to clock(s) clk
-Related violations: <none>
-
-TIMING-18#17 Warning
-Missing input or output delay  
-An output delay is missing on cmd_byte_debug[4] relative to clock(s) clk
-Related violations: <none>
-
-TIMING-18#18 Warning
-Missing input or output delay  
-An output delay is missing on cmd_byte_debug[5] relative to clock(s) clk
-Related violations: <none>
-
-TIMING-18#19 Warning
-Missing input or output delay  
-An output delay is missing on cmd_byte_debug[6] relative to clock(s) clk
-Related violations: <none>
-
-TIMING-18#20 Warning
-Missing input or output delay  
-An output delay is missing on cmd_byte_debug[7] relative to clock(s) clk
-Related violations: <none>
-
-TIMING-18#21 Warning
-Missing input or output delay  
-An output delay is missing on cmd_ready relative to clock(s) clk
-Related violations: <none>
-
-TIMING-18#22 Warning
-Missing input or output delay  
-An output delay is missing on oe_n relative to clock(s) clkout
-Related violations: <none>
-
-TIMING-18#23 Warning
-Missing input or output delay  
 An output delay is missing on rd_n relative to clock(s) clkout
 Related violations: <none>
 
-TIMING-18#24 Warning
+TIMING-18#16 Warning
 Missing input or output delay  
 An output delay is missing on wr_n relative to clock(s) clkout
 Related violations: <none>

@@ -18,7 +18,11 @@ module usb_interface(
     // Incoming command outputs
     output wire [39:0] cmd,
     output wire cmd_ready,
-    input wire cmd_read_en
+    input wire cmd_read_en,
+    
+    // Outgoing message inputs
+    input wire [39:0] read_msg,
+    input wire read_msg_ready
     
     // Output
     //output wire dbg_clkout

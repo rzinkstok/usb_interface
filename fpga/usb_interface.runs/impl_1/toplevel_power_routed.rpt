@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Fri Mar  6 09:24:50 2020
-| Host             : NLVL42YXNF2 running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2019.1 (lin64) Build 2552052 Fri May 24 14:47:09 MDT 2019
+| Date             : Sat Mar 28 18:32:02 2020
+| Host             : fpgadev running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file toplevel_power_routed.rpt -pb toplevel_power_summary_routed.pb -rpx toplevel_power_routed.rpx
 | Design           : toplevel
 | Device           : xc7z020clg484-1
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.117        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.011        |
+| Dynamic (W)              | 0.010        |
 | Device Static (W)        | 0.106        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 83.7         |
@@ -52,16 +52,16 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Clocks                  |     0.002 |        4 |       --- |             --- |
-| Slice Logic             |    <0.001 |      501 |       --- |             --- |
-|   LUT as Logic          |    <0.001 |      150 |     53200 |            0.28 |
-|   Register              |    <0.001 |      249 |    106400 |            0.23 |
+| Clocks                  |     0.003 |        4 |       --- |             --- |
+| Slice Logic             |    <0.001 |      632 |       --- |             --- |
+|   LUT as Logic          |    <0.001 |      190 |     53200 |            0.36 |
+|   Register              |    <0.001 |      313 |    106400 |            0.29 |
 |   CARRY4                |    <0.001 |       16 |     13300 |            0.12 |
-|   Others                |     0.000 |       51 |       --- |             --- |
+|   Others                |     0.000 |       68 |       --- |             --- |
 |   LUT as Shift Register |     0.000 |        2 |     17400 |            0.01 |
-| Signals                 |    <0.001 |      364 |       --- |             --- |
-| Block RAM               |    <0.001 |        2 |       140 |            1.43 |
-| I/O                     |     0.007 |       27 |       200 |           13.50 |
+| Signals                 |    <0.001 |      499 |       --- |             --- |
+| Block RAM               |     0.002 |        7 |       140 |            5.00 |
+| I/O                     |     0.004 |       19 |       200 |            9.50 |
 | Static Power            |     0.106 |          |           |                 |
 | Total                   |     0.117 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
@@ -73,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.011 |       0.004 |      0.007 |
+| Vccint    |       1.000 |     0.014 |       0.006 |      0.008 |
 | Vccaux    |       1.800 |     0.010 |       0.000 |      0.010 |
-| Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |
+| Vcco33    |       3.300 |     0.002 |       0.001 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -150,10 +150,10 @@ Table of Contents
 +---------------+-----------+
 | Name          | Power (W) |
 +---------------+-----------+
-| toplevel      |     0.011 |
-|   usbif       |     0.003 |
-|     cmd_queue |     0.003 |
-|       U0      |     0.003 |
+| toplevel      |     0.010 |
+|   usbif       |     0.006 |
+|     cmd_queue |     0.005 |
+|       U0      |     0.005 |
 +---------------+-----------+
 
 

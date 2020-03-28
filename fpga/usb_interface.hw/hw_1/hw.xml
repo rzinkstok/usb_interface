@@ -13,5 +13,8 @@
       <Properties Property="SLR.COUNT" value="1"/>
     </Object>
   </ObjectList>
+  <ObjectList object_type="hw_sysmon" gui_info="">
+    <Object name="XADC" gui_info="dashboard_1=[TEMPERATURE=-3212288;SCAN_RATE=1000;TRACK_TIME=10;]"/>
+  </ObjectList>
   <probeset name="hw project" active="false"/>
 </hwsession>

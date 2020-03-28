@@ -1,13 +1,13 @@
 #-----------------------------------------------------------
 # Vivado v2019.1 (64-bit)
-# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Fri Mar  6 09:23:13 2020
-# Process ID: 11876
-# Current directory: C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1
-# Command line: vivado.exe -log toplevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source toplevel.tcl
-# Log file: C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/toplevel.vds
-# Journal file: C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1\vivado.jou
+# Start of session at: Sat Mar 28 18:29:55 2020
+# Process ID: 26538
+# Current directory: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1
+# Command line: vivado -log toplevel.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source toplevel.tcl
+# Log file: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/toplevel.vds
+# Journal file: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source toplevel.tcl -notrace
 Command: synth_design -top toplevel -part xc7z020clg484-1
@@ -16,30 +16,106 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 46236 
+INFO: Helper process launched with PID 26562 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 747.602 ; gain = 177.035
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1704.480 ; gain = 153.684 ; free physical = 5559 ; free virtual = 10269
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'toplevel' [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/toplevel.v:4]
-INFO: [Synth 8-6157] synthesizing module 'usb_interface' [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/usb_interface.v:4]
+INFO: [Synth 8-6157] synthesizing module 'toplevel' [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/toplevel.v:4]
+INFO: [Synth 8-6157] synthesizing module 'usb_interface' [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/usb_interface.v:4]
 	Parameter IDLE bound to: 0 - type: integer 
 	Parameter READ1 bound to: 1 - type: integer 
 	Parameter READ2 bound to: 2 - type: integer 
 	Parameter WRITE bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'cmd_receiver' [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:7]
+INFO: [Synth 8-6157] synthesizing module 'cmd_receiver' [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:7]
 	Parameter IDLE bound to: 0 - type: integer 
 	Parameter ACTIVE bound to: 1 - type: integer 
 	Parameter ESCAPED bound to: 2 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:64]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:83]
-INFO: [Synth 8-6155] done synthesizing module 'cmd_receiver' (1#1) [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:7]
-INFO: [Synth 8-6157] synthesizing module 'cmd_fifo' [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/.Xil/Vivado-11876-NLVL42YXNF2/realtime/cmd_fifo_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cmd_fifo' (2#1) [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/.Xil/Vivado-11876-NLVL42YXNF2/realtime/cmd_fifo_stub.v:6]
-WARNING: [Synth 8-7023] instance 'cmd_queue' of module 'cmd_fifo' has 11 connections declared, but only 9 given [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/usb_interface.v:87]
-INFO: [Synth 8-6155] done synthesizing module 'usb_interface' (3#1) [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/usb_interface.v:4]
-INFO: [Synth 8-6155] done synthesizing module 'toplevel' (4#1) [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/toplevel.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:64]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:83]
+INFO: [Synth 8-6155] done synthesizing module 'cmd_receiver' (1#1) [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v:7]
+INFO: [Synth 8-6157] synthesizing module 'cmd_fifo' [/home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/.Xil/Vivado-26538-fpgadev/realtime/cmd_fifo_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cmd_fifo' (2#1) [/home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/.Xil/Vivado-26538-fpgadev/realtime/cmd_fifo_stub.v:6]
+WARNING: [Synth 8-7023] instance 'cmd_queue' of module 'cmd_fifo' has 11 connections declared, but only 9 given [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/usb_interface.v:91]
+INFO: [Synth 8-6155] done synthesizing module 'usb_interface' (3#1) [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/usb_interface.v:4]
+INFO: [Synth 8-6157] synthesizing module 'cmd_controller' [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_controller.v:6]
+	Parameter IDLE bound to: 0 - type: integer 
+	Parameter ERASABLE bound to: 1 - type: integer 
+	Parameter FIXED bound to: 2 - type: integer 
+	Parameter CHANNELS bound to: 3 - type: integer 
+	Parameter SIM_ERASABLE bound to: 4 - type: integer 
+	Parameter SIM_FIXED bound to: 5 - type: integer 
+	Parameter CONTROL bound to: 6 - type: integer 
+	Parameter STATUS bound to: 7 - type: integer 
+	Parameter MON_REGS bound to: 8 - type: integer 
+	Parameter MON_CHANNELS bound to: 9 - type: integer 
+	Parameter MON_DSKY bound to: 10 - type: integer 
+	Parameter TRACE bound to: 11 - type: integer 
+	Parameter NASSP bound to: 12 - type: integer 
+	Parameter SEND_READ_MSG bound to: 15 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'cmd_controller' (4#1) [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_controller.v:6]
+INFO: [Synth 8-6157] synthesizing module 'control_regs' [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/control_regs.v:6]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/control_regs.v:37]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/control_regs.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'control_regs' (5#1) [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/control_regs.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'toplevel' (6#1) [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/toplevel.v:4]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[15]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[14]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[13]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[12]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[11]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[10]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[9]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[8]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[7]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[6]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[5]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[4]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[3]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[2]
+WARNING: [Synth 8-3331] design control_regs has unconnected port data_in[1]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[39]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[38]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[37]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[36]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[35]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[34]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[33]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[32]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[31]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[30]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[29]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[28]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[27]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[26]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[25]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[24]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[23]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[22]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[21]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[20]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[19]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[18]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[17]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[16]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[15]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[14]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[13]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[12]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[11]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[10]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[9]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[8]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[7]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[6]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[5]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[4]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[3]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[2]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[1]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg[0]
+WARNING: [Synth 8-3331] design usb_interface has unconnected port read_msg_ready
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 814.164 ; gain = 243.598
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1760.199 ; gain = 209.402 ; free physical = 5584 ; free virtual = 10296
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -52,47 +128,51 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 814.164 ; gain = 243.598
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 1766.137 ; gain = 215.340 ; free physical = 5580 ; free virtual = 10292
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 814.164 ; gain = 243.598
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 1766.137 ; gain = 215.340 ; free physical = 5580 ; free virtual = 10292
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/cmd_fifo/cmd_fifo/cmd_fifo_in_context.xdc] for cell 'usbif/cmd_queue'
-Finished Parsing XDC File [c:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/cmd_fifo/cmd_fifo/cmd_fifo_in_context.xdc] for cell 'usbif/cmd_queue'
-Parsing XDC File [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/constrs_1/new/usb_interface.xdc]
-Finished Parsing XDC File [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/constrs_1/new/usb_interface.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.srcs/constrs_1/new/usb_interface.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/toplevel_propImpl.xdc].
+Parsing XDC File [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/cmd_fifo/cmd_fifo/cmd_fifo_in_context.xdc] for cell 'usbif/cmd_queue'
+Finished Parsing XDC File [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/cmd_fifo/cmd_fifo/cmd_fifo_in_context.xdc] for cell 'usbif/cmd_queue'
+Parsing XDC File [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/constrs_1/new/usb_interface.xdc]
+CRITICAL WARNING: [Designutils 20-1307] Command '//' is not supported in the xdc constraint file. [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/constrs_1/new/usb_interface.xdc:59]
+CRITICAL WARNING: [Designutils 20-1307] Command '//' is not supported in the xdc constraint file. [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/constrs_1/new/usb_interface.xdc:64]
+Finished Parsing XDC File [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/constrs_1/new/usb_interface.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/rzinkstok/usb_interface/fpga/usb_interface.srcs/constrs_1/new/usb_interface.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/toplevel_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/toplevel_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 924.559 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1886.770 ; gain = 0.000 ; free physical = 5466 ; free virtual = 10195
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 924.559 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1886.770 ; gain = 0.000 ; free physical = 5466 ; free virtual = 10195
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 924.559 ; gain = 353.992
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5540 ; free virtual = 10269
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 924.559 ; gain = 353.992
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5539 ; free virtual = 10269
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for usbif/cmd_queue. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 924.559 ; gain = 353.992
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5539 ; free virtual = 10269
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'cmd_receiver'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'usb_interface'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'cmd_controller'
+INFO: [Synth 8-5587] ROM size for "next_state" is below threshold of ROM address width. It will be mapped to LUTs
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -110,8 +190,27 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
                    WRITE |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'usb_interface'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                             0000 |                             0000
+                ERASABLE |                             0001 |                             0001
+                   FIXED |                             0010 |                             0010
+                CHANNELS |                             0011 |                             0011
+            SIM_ERASABLE |                             0100 |                             0100
+               SIM_FIXED |                             0101 |                             0101
+                 CONTROL |                             0110 |                             0110
+           SEND_READ_MSG |                             0111 |                             1111
+                  STATUS |                             1000 |                             0111
+                MON_REGS |                             1001 |                             1000
+            MON_CHANNELS |                             1010 |                             1001
+                MON_DSKY |                             1011 |                             1010
+                   TRACE |                             1100 |                             1011
+                   NASSP |                             1101 |                             1100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'cmd_controller'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 924.559 ; gain = 353.992
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5531 ; free virtual = 10261
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -126,22 +225,29 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input      3 Bit       Adders := 1     
 +---Registers : 
-	               40 Bit    Registers := 1     
+	               40 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	                1 Bit    Registers := 5     
 +---Muxes : 
 	   7 Input     40 Bit        Muxes := 1     
 	   2 Input     40 Bit        Muxes := 2     
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
 	   2 Input      8 Bit        Muxes := 6     
 	   3 Input      8 Bit        Muxes := 1     
+	  14 Input      4 Bit        Muxes := 1     
+	  13 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 2     
 	   2 Input      2 Bit        Muxes := 4     
 	   4 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 11    
-	   3 Input      1 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 16    
+	   3 Input      1 Bit        Muxes := 8     
 	   4 Input      1 Bit        Muxes := 1     
+	  14 Input      1 Bit        Muxes := 5     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -176,6 +282,26 @@ Detailed RTL Component Info :
 	   2 Input      2 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 5     
 	   4 Input      1 Bit        Muxes := 1     
+Module cmd_controller 
+Detailed RTL Component Info : 
++---Registers : 
+	               40 Bit    Registers := 1     
++---Muxes : 
+	  14 Input      4 Bit        Muxes := 1     
+	  13 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	  14 Input      1 Bit        Muxes := 5     
+Module control_regs 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   3 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -194,7 +320,7 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3917] design toplevel has port siwu driven by constant 1
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 924.559 ; gain = 353.992
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5517 ; free virtual = 10251
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -206,13 +332,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 924.559 ; gain = 353.992
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5387 ; free virtual = 10128
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 936.699 ; gain = 366.133
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5385 ; free virtual = 10126
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -224,7 +350,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 938.242 ; gain = 367.676
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5384 ; free virtual = 10126
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -248,7 +374,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 943.918 ; gain = 373.352
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5384 ; free virtual = 10126
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -261,7 +387,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 943.918 ; gain = 373.352
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5384 ; free virtual = 10126
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -273,25 +399,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 943.918 ; gain = 373.352
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5384 ; free virtual = 10126
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 943.918 ; gain = 373.352
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5384 ; free virtual = 10126
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 943.918 ; gain = 373.352
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5384 ; free virtual = 10126
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 943.918 ; gain = 373.352
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5384 ; free virtual = 10126
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -309,46 +435,48 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |cmd_fifo |     1|
-|2     |BUFG     |     1|
-|3     |LUT1     |     3|
-|4     |LUT2     |    18|
+|2     |BUFG     |     2|
+|3     |LUT1     |     2|
+|4     |LUT2     |    19|
 |5     |LUT3     |     3|
-|6     |LUT4     |     8|
-|7     |LUT5     |     8|
-|8     |LUT6     |    23|
-|9     |FDCE     |    48|
-|10    |IBUF     |    14|
-|11    |OBUF     |    13|
+|6     |LUT4     |    11|
+|7     |LUT5     |    15|
+|8     |LUT6     |    35|
+|9     |FDCE     |    73|
+|10    |IBUF     |    13|
+|11    |OBUF     |     6|
 +------+---------+------+
 
 Report Instance Areas: 
-+------+-----------+--------------+------+
-|      |Instance   |Module        |Cells |
-+------+-----------+--------------+------+
-|1     |top        |              |   183|
-|2     |  usbif    |usb_interface |   155|
-|3     |    cmd_rx |cmd_receiver  |   104|
-+------+-----------+--------------+------+
++------+------------+---------------+------+
+|      |Instance    |Module         |Cells |
++------+------------+---------------+------+
+|1     |top         |               |   223|
+|2     |  cmd_ctrl  |cmd_controller |    34|
+|3     |  ctrl_regs |control_regs   |     3|
+|4     |  usbif     |usb_interface  |   165|
+|5     |    cmd_rx  |cmd_receiver   |   105|
++------+------------+---------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 943.918 ; gain = 373.352
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1886.770 ; gain = 335.973 ; free physical = 5384 ; free virtual = 10126
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 943.918 ; gain = 262.957
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 943.918 ; gain = 373.352
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1886.770 ; gain = 215.340 ; free physical = 5439 ; free virtual = 10181
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1886.777 ; gain = 335.973 ; free physical = 5439 ; free virtual = 10181
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 961.348 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1886.777 ; gain = 0.000 ; free physical = 5385 ; free virtual = 10128
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-24 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+33 Infos, 58 Warnings, 2 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 961.348 ; gain = 661.898
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 961.348 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 1886.777 ; gain = 486.555 ; free physical = 5483 ; free virtual = 10225
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1886.777 ; gain = 0.000 ; free physical = 5483 ; free virtual = 10225
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/rzine07792/source/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/toplevel.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint '/home/rzinkstok/usb_interface/fpga/usb_interface.runs/synth_1/toplevel.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file toplevel_utilization_synth.rpt -pb toplevel_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Mar  6 09:23:45 2020...
+INFO: [Common 17-206] Exiting Vivado at Sat Mar 28 18:30:39 2020...

@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Sat Mar 28 18:32:13 2020
-# Process ID: 27524
+# Start of session at: Mon Mar 30 22:40:21 2020
+# Process ID: 3163
 # Current directory: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/impl_1
 # Command line: vivado -log toplevel.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source toplevel.tcl -notrace
 # Log file: /home/rzinkstok/usb_interface/fpga/usb_interface.runs/impl_1/toplevel.vdi

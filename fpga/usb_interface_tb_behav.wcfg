@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="911242000fs"></ZoomStartTime>
-      <ZoomEndTime time="4751242001fs"></ZoomEndTime>
-      <Cursor1Time time="2831242000fs"></Cursor1Time>
+      <ZoomStartTime time="2188200000fs"></ZoomStartTime>
+      <ZoomEndTime time="3224200001fs"></ZoomEndTime>
+      <Cursor1Time time="2870000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="201"></NameColumnWidth>
-      <ValueColumnWidth column_width="107"></ValueColumnWidth>
+      <ValueColumnWidth column_width="103"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="11" />
+   <WVObjectSize size="20" />
    <wvobject type="group" fp_name="group43">
       <obj_property name="label">USB interface</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -65,5 +65,41 @@
    <wvobject type="array" fp_name="/toplevel_tb/tl/read_data">
       <obj_property name="ElementShortName">read_data[15:0]</obj_property>
       <obj_property name="ObjectShortName">read_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/toplevel_tb/tl/usbif/data">
+      <obj_property name="ElementShortName">data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/toplevel_tb/tl/usbif/read_msg">
+      <obj_property name="ElementShortName">read_msg[39:0]</obj_property>
+      <obj_property name="ObjectShortName">read_msg[39:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/toplevel_tb/tl/usbif/read_msg_ready">
+      <obj_property name="ElementShortName">read_msg_ready</obj_property>
+      <obj_property name="ObjectShortName">read_msg_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/toplevel_tb/tl/usbif/read_msg_queue/wr_en">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/toplevel_tb/tl/usbif/read_msg_queue/rd_en">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/toplevel_tb/tl/usbif/read_msg_queue/empty">
+      <obj_property name="ElementShortName">empty</obj_property>
+      <obj_property name="ObjectShortName">empty</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/toplevel_tb/tl/usbif/read_byte_queue/wr_en">
+      <obj_property name="ElementShortName">wr_en</obj_property>
+      <obj_property name="ObjectShortName">wr_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/toplevel_tb/tl/usbif/read_byte_queue/rd_en">
+      <obj_property name="ElementShortName">rd_en</obj_property>
+      <obj_property name="ObjectShortName">rd_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/toplevel_tb/tl/usbif/read_byte_queue/empty">
+      <obj_property name="ElementShortName">empty</obj_property>
+      <obj_property name="ObjectShortName">empty</obj_property>
    </wvobject>
 </wave_config>

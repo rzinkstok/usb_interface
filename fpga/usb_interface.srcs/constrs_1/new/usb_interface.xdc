@@ -56,12 +56,12 @@ set_property PACKAGE_PIN W21 [get_ports wr_n]
 set_property IOSTANDARD LVCMOS33 [get_ports oe_n]
 set_property PACKAGE_PIN U20 [get_ports oe_n]
 
-// NHALGA
+# NHALGA
 set_property IOSTANDARD LVCMOS33 [get_ports nhalga]
 set_property DRIVE 4 [get_ports nhalga]
 set_property PACKAGE_PIN J22 [get_ports nhalga]
 
-// MNHRPT
+# MNHRPT
 set_property IOSTANDARD LVCMOS33 [get_ports mnhrpt]
 set_property DRIVE 4 [get_ports mnhrpt]
 set_property PACKAGE_PIN G22 [get_ports mnhrpt]

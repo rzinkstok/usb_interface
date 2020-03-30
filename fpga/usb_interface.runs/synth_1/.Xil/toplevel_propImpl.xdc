@@ -33,11 +33,7 @@ set_property src_info {type:XDC file:1 line:54 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN W21 [get_ports wr_n]
 set_property src_info {type:XDC file:1 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN U20 [get_ports oe_n]
-set_property src_info {type:XDC file:1 line:59 export:INPUT save:INPUT read:READ} [current_design]
-// NHALGA
 set_property src_info {type:XDC file:1 line:62 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN J22 [get_ports nhalga]
-set_property src_info {type:XDC file:1 line:64 export:INPUT save:INPUT read:READ} [current_design]
-// MNHRPT
 set_property src_info {type:XDC file:1 line:67 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN G22 [get_ports mnhrpt]

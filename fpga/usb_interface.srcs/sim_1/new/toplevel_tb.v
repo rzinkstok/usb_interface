@@ -14,8 +14,6 @@ module toplevel_tb();
     wire siwu;
     reg [7:0] data_in;
     
-    wire dbg_clkout;
-    
     always #16.667 clkout = ~clkout;
     always #10 clk = ~clk;
     
@@ -72,17 +70,6 @@ module toplevel_tb();
         @(posedge clkout) data_in = 8'hC0;
         @(posedge clkout) rxf_n = 1'b1;
     
-        #200 begin 
-            rxf_n = 1'b0;
-            data_in = 8'hC0;
-        end
-        @(negedge oe_n);
-        @(negedge rd_n);
-        @(posedge clkout) data_in = 8'h12;
-        @(posedge clkout) data_in = 8'h34;
-        @(posedge clkout) data_in = 8'h56;
-        @(posedge clkout) data_in = 8'hC0;
-        @(posedge clkout) rxf_n = 1'b1;
     
         #200 begin
             rxf_n = 1'b0;

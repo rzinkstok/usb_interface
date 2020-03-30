@@ -1,12 +1,10 @@
 #!/usr/bin/env python
-import sys
 import random
 import time
 from pylibftdi import Device, USB_PID_LIST, USB_VID_LIST
-from ctypes import *
 
 RANDOM = False
-INPUT = True
+INPUT = False
 
 STYX_VID = 0x2a19
 STYX_PID = 0x1007
@@ -22,11 +20,56 @@ SLIP_ESC_END = b'\xDC'
 SLIP_ESC_ESC = b'\xDD'
 
 
+def translate(msg):
+    write = (msg[0] >> 7) == 1
+    address_group = (msg[0] & 127)
+    address = int.from_bytes(msg[1:3], byteorder='big')
+    data = int.from_bytes(msg[3:5], byteorder='big')
+    print(f"Write: {write}")
+    print(f"Address group: {address_group}")
+    print(f"Address: {address}")
+    print(f"Data: {data}")
+
+
 def slip(msg):
     # Escape ESC and END characters, and wrap the result with ENDs
     msg = msg.replace(SLIP_ESC, SLIP_ESC + SLIP_ESC_ESC)
     msg = msg.replace(SLIP_END, SLIP_ESC + SLIP_ESC_END)
     return SLIP_END + msg + SLIP_END
+
+
+def unslip(msg):
+    # Strip off the wrapping ENDs, and unescape ESCs and ENDs
+    if (msg[0] != ord(SLIP_END)) or (msg[-1] != ord(SLIP_END)):
+        raise RuntimeError('SLIPped message does not start and end with SLIP_END: %02x %02x' % (msg[0], msg[-1]))
+    msg = msg[1:-1]
+    msg = msg.replace(SLIP_ESC + SLIP_ESC_END, SLIP_END)
+    msg = msg.replace(SLIP_ESC + SLIP_ESC_ESC, SLIP_ESC)
+    return msg
+
+
+def get_msg(data):
+    first_end = data.find(SLIP_END)
+    if first_end == -1:
+        return b'', b''
+    elif first_end != 0:
+        print(f'Dropping {first_end} bytes from data stream')
+
+    data = data[first_end:]
+    non_end = 0
+    for i, b in enumerate(data):
+        if b != ord(SLIP_END):
+            non_end = i
+            break
+
+    if non_end == 0:
+        return b'', b''
+
+    next_end = data.find(SLIP_END, non_end)
+    if next_end == -1:
+        return b'', b''
+
+    return unslip(data[non_end-1:next_end+1]), data[next_end+1:]
 
 
 def tobinary(i):
@@ -35,6 +78,7 @@ def tobinary(i):
 
 def write_bytes(dev, b):
     print(len(b))
+    print(b)
     m = slip(bytes(b))
     print(m)
     dev.write(m)
@@ -42,6 +86,24 @@ def write_bytes(dev, b):
         input()
     else:
         time.sleep(0.2)
+
+
+def read_bytes(dev):
+    while(True):
+        bytes = dev.read(4096)
+        if(len(bytes) > 0):
+            break
+        time.sleep(0.1)
+
+    print("Received", bytes)
+    while(len(bytes)>0):
+        print(len(bytes))
+        msg, bytes = get_msg(bytes)
+        if(msg):
+            print(msg)
+            translate(msg)
+            if INPUT:
+                input()
 
 
 with Device() as dev:
@@ -67,7 +129,17 @@ with Device() as dev:
     else:
         while True:
             write_bytes(dev, [160, 0, 64, 0, 1])
-            write_bytes(dev, [160, 0, 64, 0, 0])
-            write_bytes(dev, [160, 0, 4, 0, 1])
-            write_bytes(dev, [160, 0, 4, 0, 0])
+            write_bytes(dev, [32, 0, 64])
+            read_bytes(dev)
 
+            write_bytes(dev, [160, 0, 64, 0, 0])
+            write_bytes(dev, [32, 0, 64])
+            read_bytes(dev)
+
+            write_bytes(dev, [160, 0, 4, 0, 1])
+            write_bytes(dev, [32, 0, 4])
+            read_bytes(dev)
+
+            write_bytes(dev, [160, 0, 4, 0, 0])
+            write_bytes(dev, [32, 0, 4])
+            read_bytes(dev)

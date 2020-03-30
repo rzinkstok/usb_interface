@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -38,6 +37,7 @@ read_verilog -library xil_defaultlib {
   /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_controller.v
   /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/cmd_receiver.v
   /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/control_regs.v
+  /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/msg_sender.v
   /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/usb_interface.v
   /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/new/toplevel.v
 }
@@ -45,6 +45,15 @@ read_ip -quiet /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/i
 set_property used_in_implementation false [get_files -all /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/cmd_fifo/cmd_fifo.xdc]
 set_property used_in_implementation false [get_files -all /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/cmd_fifo/cmd_fifo_clocks.xdc]
 set_property used_in_implementation false [get_files -all /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/cmd_fifo/cmd_fifo_ooc.xdc]
+
+read_ip -quiet /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/read_fifo/read_fifo.xci
+set_property used_in_implementation false [get_files -all /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/read_fifo/read_fifo.xdc]
+set_property used_in_implementation false [get_files -all /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/read_fifo/read_fifo_ooc.xdc]
+
+read_ip -quiet /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/read_byte_fifo/read_byte_fifo.xci
+set_property used_in_implementation false [get_files -all /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/read_byte_fifo/read_byte_fifo.xdc]
+set_property used_in_implementation false [get_files -all /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/read_byte_fifo/read_byte_fifo_clocks.xdc]
+set_property used_in_implementation false [get_files -all /home/rzinkstok/usb_interface/fpga/usb_interface.srcs/sources_1/ip/read_byte_fifo/read_byte_fifo_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

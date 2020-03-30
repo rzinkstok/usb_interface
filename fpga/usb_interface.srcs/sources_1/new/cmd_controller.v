@@ -136,6 +136,7 @@ module cmd_controller(
         end
     
         ERASABLE: begin
+        	next_state = IDLE;
             if (~cmd_write_flag) begin
                 //if (agc_erasable_read_done) begin
                 //    next_state = SEND_READ_MSG;
@@ -164,6 +165,7 @@ module cmd_controller(
         end
     
         CHANNELS: begin
+        	next_state = IDLE;
             if (~cmd_write_flag) begin
                 //if (agc_channels_read_done) begin
                 //    next_state = SEND_READ_MSG;

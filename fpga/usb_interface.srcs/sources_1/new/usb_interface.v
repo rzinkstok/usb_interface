@@ -58,6 +58,9 @@ module usb_interface(
     wire rx_data_ready;
     assign rx_data_ready = (state == READ2) & (~rxf_n);
     
+    // Upon completion of a valid command, the receiver will assert cmd_valid and
+	// output the command on cmd_in. This will place the command onto the incoming
+	// command FIFO.
     wire cmd_valid;
     wire [39:0] cmd_in;
     

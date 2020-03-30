@@ -27,6 +27,9 @@ module cmd_receiver(
     reg [1:0] state;
     reg [1:0] next_state;
     
+    /*******************************************************************************.
+	* Message data                                                                  *
+	'*******************************************************************************/
     // Un-SLIPped data ready for writing to the command being processed, and
     // associated validity flag
     reg data_valid;
@@ -58,7 +61,7 @@ module cmd_receiver(
             cmd_valid <= cmd_valid_q;
             
             if (state == IDLE) begin
-                cmd_msg <= 40'b0; // remove for debugging
+                cmd_msg <= 40'b0;
             end else if (data_valid) begin
                 // A byte has been un-SLIPped and is ready for writing
                 case (write_index)
@@ -77,7 +80,7 @@ module cmd_receiver(
         write_index_q = write_index;
         data_q = 8'b0;
         data_valid = 1'b0;
-        cmd_valid_q = 1'b0; // cmd_valid; // for debugging
+        cmd_valid_q = 1'b0;
         
         if (data_ready) begin
             case (state)
@@ -94,7 +97,9 @@ module cmd_receiver(
                         // We got an END. If we're still at index 0 (i.e., repeated
                         // END), ignore it.
                         if (write_index != 3'd0) begin
-                            next_state = IDLE;  
+                            next_state = IDLE;
+                            // Check to see if the message is the expected length. If
+                    		// so, declare it valid.
                             if (write_index == msg_length) begin
                                 cmd_valid_q = 1'b1;
                             end
